@@ -1,0 +1,11 @@
+C:\Users\zeyad arakip\ProjectDVLD\Send Data To Form\bin\Debug\Send Data To Form.exe.config
+C:\Users\zeyad arakip\ProjectDVLD\Send Data To Form\bin\Debug\Send Data To Form.exe
+C:\Users\zeyad arakip\ProjectDVLD\Send Data To Form\bin\Debug\Send Data To Form.pdb
+C:\Users\zeyad arakip\ProjectDVLD\Send Data To Form\obj\Debug\Send Data To Form.csproj.AssemblyReference.cache
+C:\Users\zeyad arakip\ProjectDVLD\Send Data To Form\obj\Debug\Send_Data_To_Form.Form1.resources
+C:\Users\zeyad arakip\ProjectDVLD\Send Data To Form\obj\Debug\Send_Data_To_Form.Form2.resources
+C:\Users\zeyad arakip\ProjectDVLD\Send Data To Form\obj\Debug\Send_Data_To_Form.Properties.Resources.resources
+C:\Users\zeyad arakip\ProjectDVLD\Send Data To Form\obj\Debug\Send Data To Form.csproj.GenerateResource.cache
+C:\Users\zeyad arakip\ProjectDVLD\Send Data To Form\obj\Debug\Send Data To Form.csproj.CoreCompileInputs.cache
+C:\Users\zeyad arakip\ProjectDVLD\Send Data To Form\obj\Debug\Send Data To Form.exe
+C:\Users\zeyad arakip\ProjectDVLD\Send Data To Form\obj\Debug\Send Data To Form.pdb

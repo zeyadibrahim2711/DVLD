@@ -1,0 +1,12 @@
+C:\Users\zeyad arakip\ProjectDVLD\Send Data Back To Form Using Delegate\bin\Debug\Send Data Back To Form Using Delegate.exe.config
+C:\Users\zeyad arakip\ProjectDVLD\Send Data Back To Form Using Delegate\bin\Debug\Send Data Back To Form Using Delegate.exe
+C:\Users\zeyad arakip\ProjectDVLD\Send Data Back To Form Using Delegate\bin\Debug\Send Data Back To Form Using Delegate.pdb
+C:\Users\zeyad arakip\ProjectDVLD\Send Data Back To Form Using Delegate\obj\Debug\Send Data Back To Form Using Delegate.csproj.AssemblyReference.cache
+C:\Users\zeyad arakip\ProjectDVLD\Send Data Back To Form Using Delegate\obj\Debug\Send_Data_Back_To_Form_Using_Delegate.Form1.resources
+C:\Users\zeyad arakip\ProjectDVLD\Send Data Back To Form Using Delegate\obj\Debug\Send_Data_Back_To_Form_Using_Delegate.Form2.resources
+C:\Users\zeyad arakip\ProjectDVLD\Send Data Back To Form Using Delegate\obj\Debug\Send_Data_Back_To_Form_Using_Delegate.Properties.Resources.resources
+C:\Users\zeyad arakip\ProjectDVLD\Send Data Back To Form Using Delegate\obj\Debug\Send Data Back To Form Using Delegate.csproj.GenerateResource.cache
+C:\Users\zeyad arakip\ProjectDVLD\Send Data Back To Form Using Delegate\obj\Debug\Send Data Back To Form Using Delegate.csproj.CoreCompileInputs.cache
+C:\Users\zeyad arakip\ProjectDVLD\Send Data Back To Form Using Delegate\obj\Debug\Send Data Back To Form Using Delegate.exe
+C:\Users\zeyad arakip\ProjectDVLD\Send Data Back To Form Using Delegate\obj\Debug\Send Data Back To Form Using Delegate.pdb
+C:\Users\zeyad arakip\ProjectDVLD\Send Data Back To Form Using Delegate\obj\Debug\Send Data Back To Form Using Delegate.exe.config
