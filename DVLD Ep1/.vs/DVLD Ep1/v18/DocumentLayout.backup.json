@@ -1,0 +1,396 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\peoplemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:peoplemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|c:\\users\\zeyad arakip\\projectdvld\\dvld ep1\\formofaddeditnewuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:formofaddeditnewuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\formofaddeditnewperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:formofaddeditnewperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|c:\\users\\zeyad arakip\\projectdvld\\dvld ep1\\usersmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:usersmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|c:\\users\\zeyad arakip\\projectdvld\\dvld ep1\\usersmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:usersmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\peoplemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:peoplemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\formofpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:formofpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|c:\\users\\zeyad arakip\\projectdvld\\dvld ep1\\formofaddeditnewuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:formofaddeditnewuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\formofaddeditnewperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:formofaddeditnewperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\homeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:homeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\homeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:homeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E4FB6C3-A715-4051-8283-5E981AA584EC}|..\\BusinessLayer\\BusinessLayer.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\businesslayer\\usersbusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E4FB6C3-A715-4051-8283-5E981AA584EC}|..\\BusinessLayer\\BusinessLayer.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\businesslayer\\peoplebusinesslayer.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AD749-79F8-456A-A974-E0B40C8DC956}|..\\AccessLayer\\AccessLayer.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\accesslayer\\userdataaccesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AD749-79F8-456A-A974-E0B40C8DC956}|..\\AccessLayer\\AccessLayer.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\accesslayer\\peopledataaccesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AD749-79F8-456A-A974-E0B40C8DC956}|..\\AccessLayer\\AccessLayer.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\accesslayer\\countriesdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E4FB6C3-A715-4051-8283-5E981AA584EC}|..\\BusinessLayer\\BusinessLayer.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\businesslayer\\countriesbusinesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\persondetalisuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:persondetalisuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\persondetalisuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:persondetalisuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\formofpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68871A8D-BF08-4A04-9B22-7C12920E9FE7}|DVLD Ep1.csproj|solutionrelative:formofpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormOfAddEditNewUser.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\FormOfAddEditNewUser.cs",
+              "RelativeDocumentMoniker": "FormOfAddEditNewUser.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\FormOfAddEditNewUser.cs [Design]",
+              "RelativeToolTip": "FormOfAddEditNewUser.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T12:38:21.852Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormOfAddEditNewPerson.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\FormOfAddEditNewPerson.cs",
+              "RelativeDocumentMoniker": "FormOfAddEditNewPerson.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\FormOfAddEditNewPerson.cs [Design]",
+              "RelativeToolTip": "FormOfAddEditNewPerson.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T18:27:35.259Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PeopleManagementForm.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\PeopleManagementForm.cs",
+              "RelativeDocumentMoniker": "PeopleManagementForm.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\PeopleManagementForm.cs",
+              "RelativeToolTip": "PeopleManagementForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIAAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T01:01:51.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsersManagementForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\UsersManagementForm.cs",
+              "RelativeDocumentMoniker": "UsersManagementForm.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\UsersManagementForm.cs [Design]",
+              "RelativeToolTip": "UsersManagementForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T16:21:16.715Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsersManagementForm.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\UsersManagementForm.cs",
+              "RelativeDocumentMoniker": "UsersManagementForm.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\UsersManagementForm.cs",
+              "RelativeToolTip": "UsersManagementForm.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAiwDsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T15:31:21.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PeopleManagementForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\PeopleManagementForm.cs",
+              "RelativeDocumentMoniker": "PeopleManagementForm.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\PeopleManagementForm.cs [Design]",
+              "RelativeToolTip": "PeopleManagementForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T23:18:00.716Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormOfPersonDetails.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\FormOfPersonDetails.cs",
+              "RelativeDocumentMoniker": "FormOfPersonDetails.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\FormOfPersonDetails.cs [Design]",
+              "RelativeToolTip": "FormOfPersonDetails.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T17:48:46.594Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormOfAddEditNewUser.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\FormOfAddEditNewUser.cs",
+              "RelativeDocumentMoniker": "FormOfAddEditNewUser.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\FormOfAddEditNewUser.cs",
+              "RelativeToolTip": "FormOfAddEditNewUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T12:42:47.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FormOfAddEditNewPerson.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\FormOfAddEditNewPerson.cs",
+              "RelativeDocumentMoniker": "FormOfAddEditNewPerson.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\FormOfAddEditNewPerson.cs",
+              "RelativeToolTip": "FormOfAddEditNewPerson.cs",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAuwAcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T02:19:19.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\HomeForm.cs",
+              "RelativeDocumentMoniker": "HomeForm.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\HomeForm.cs [Design]",
+              "RelativeToolTip": "HomeForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T12:12:47.786Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomeForm.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\HomeForm.cs",
+              "RelativeDocumentMoniker": "HomeForm.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\HomeForm.cs",
+              "RelativeToolTip": "HomeForm.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAArwCMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T12:32:07.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PeopleBusinessLayer.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\BusinessLayer\\PeopleBusinessLayer.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\PeopleBusinessLayer.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\BusinessLayer\\PeopleBusinessLayer.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\PeopleBusinessLayer.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAHIAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T01:53:55.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UsersBusinessLayer.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\BusinessLayer\\UsersBusinessLayer.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\UsersBusinessLayer.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\BusinessLayer\\UsersBusinessLayer.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\UsersBusinessLayer.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAUwEwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T15:59:55.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T01:34:45.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T15:38:31.018Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UserDataAccessLayer.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\AccessLayer\\UserDataAccessLayer.cs",
+              "RelativeDocumentMoniker": "..\\AccessLayer\\UserDataAccessLayer.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\AccessLayer\\UserDataAccessLayer.cs",
+              "RelativeToolTip": "..\\AccessLayer\\UserDataAccessLayer.cs",
+              "ViewState": "AgIAAFcBAAAAAAAAAAAuwHYBAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T13:51:54.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PeopleDataAccessLayer.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\AccessLayer\\PeopleDataAccessLayer.cs",
+              "RelativeDocumentMoniker": "..\\AccessLayer\\PeopleDataAccessLayer.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\AccessLayer\\PeopleDataAccessLayer.cs",
+              "RelativeToolTip": "..\\AccessLayer\\PeopleDataAccessLayer.cs",
+              "ViewState": "AgIAAEABAAAAAAAAAAAuwLcBAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T00:04:47.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CountriesDataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\AccessLayer\\CountriesDataAccess.cs",
+              "RelativeDocumentMoniker": "..\\AccessLayer\\CountriesDataAccess.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\AccessLayer\\CountriesDataAccess.cs",
+              "RelativeToolTip": "..\\AccessLayer\\CountriesDataAccess.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA4wCIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T12:39:15.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CountriesBusinessLayer.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\BusinessLayer\\CountriesBusinessLayer.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLayer\\CountriesBusinessLayer.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\BusinessLayer\\CountriesBusinessLayer.cs",
+              "RelativeToolTip": "..\\BusinessLayer\\CountriesBusinessLayer.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAA4wDUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T12:45:46.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "PersonDetalisUC.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\PersonDetalisUC.cs",
+              "RelativeDocumentMoniker": "PersonDetalisUC.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\PersonDetalisUC.cs [Design]",
+              "RelativeToolTip": "PersonDetalisUC.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T09:01:15.919Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "PersonDetalisUC.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\PersonDetalisUC.cs",
+              "RelativeDocumentMoniker": "PersonDetalisUC.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\PersonDetalisUC.cs",
+              "RelativeToolTip": "PersonDetalisUC.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAA3wC4AAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T09:02:12.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FormOfPersonDetails.cs",
+              "DocumentMoniker": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\FormOfPersonDetails.cs",
+              "RelativeDocumentMoniker": "FormOfPersonDetails.cs",
+              "ToolTip": "C:\\Users\\zeyad arakip\\ProjectDVLD\\DVLD Ep1\\FormOfPersonDetails.cs",
+              "RelativeToolTip": "FormOfPersonDetails.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T17:52:21.355Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
