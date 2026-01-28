@@ -1,0 +1,12 @@
+C:\Users\zeyad arakip\ProjectDVLD\AccessLayer\bin\Debug\AccessLayer.dll
+C:\Users\zeyad arakip\ProjectDVLD\AccessLayer\bin\Debug\AccessLayer.pdb
+C:\Users\zeyad arakip\ProjectDVLD\AccessLayer\obj\Debug\AccessLayer.csproj.AssemblyReference.cache
+C:\Users\zeyad arakip\ProjectDVLD\AccessLayer\obj\Debug\AccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\zeyad arakip\ProjectDVLD\AccessLayer\obj\Debug\AccessLayer.dll
+C:\Users\zeyad arakip\ProjectDVLD\AccessLayer\obj\Debug\AccessLayer.pdb
+C:\Users\zeyad arakip\Desktop\RealProjectDVLD\AccessLayer\bin\Debug\AccessLayer.dll
+C:\Users\zeyad arakip\Desktop\RealProjectDVLD\AccessLayer\bin\Debug\AccessLayer.pdb
+C:\Users\zeyad arakip\Desktop\RealProjectDVLD\AccessLayer\obj\Debug\AccessLayer.csproj.AssemblyReference.cache
+C:\Users\zeyad arakip\Desktop\RealProjectDVLD\AccessLayer\obj\Debug\AccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\zeyad arakip\Desktop\RealProjectDVLD\AccessLayer\obj\Debug\AccessLayer.dll
+C:\Users\zeyad arakip\Desktop\RealProjectDVLD\AccessLayer\obj\Debug\AccessLayer.pdb
