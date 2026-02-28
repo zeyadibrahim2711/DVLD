@@ -46,47 +46,11 @@ namespace PeopleDataAccessLayer
             return dt;
 
         }
-        public static int CountPeople()
+        
+        public static DataTable GetPersonInfo( int? PersonId,  string NationalNo,  string FirstName,  string SecondName,  string ThirdName,
+       string LastName,  string Gendor, DateTime? DateOfBirth , string Nationality, string Phone, string Email, string Address)
         {
-            //this function will return the new contact id if succeeded and -1 if not.
-            int TotalPeople = -1;
-
-            SqlConnection connection = new SqlConnection(clsPeopleDataAccessSettings.ConnectionString);
-
-            string query = " SELECT COUNT(PersonID)  from vvvv_People\r\n;";
-
-            SqlCommand command = new SqlCommand(query, connection);
-            try
-            {
-                connection.Open();
-
-                object result = command.ExecuteScalar();
-
-
-                if (result != null && int.TryParse(result.ToString(), out int Total))
-                {
-                    TotalPeople = Total;
-                }
-            }
-
-            catch (Exception ex)
-            {
-                //Console.WriteLine("Error: " + ex.Message);
-
-            }
-
-            finally
-            {
-                connection.Close();
-            }
-
-
-            return TotalPeople;
-        }
-        public static bool GetPersonInfo(ref int? PersonId, ref string NationalNo, ref string FirstName, ref string SecondName, ref string ThirdName,
-      ref string LastName, ref string Gendor,ref DateTime? DateOfBirth ,ref string Nationality, ref string Phone, ref string Email,ref string Address)
-        {
-            bool isFound = false;
+            DataTable dt= new DataTable();
 
             SqlConnection connection = new SqlConnection(clsPeopleDataAccessSettings.ConnectionString);
 
@@ -145,43 +109,22 @@ namespace PeopleDataAccessLayer
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
 
-                if (reader.Read())
+                if (reader.HasRows)
                 {
-                    // The record was found
-                    isFound = true;
-
-                    PersonId = Convert.ToInt32(reader["PersonID"]);
-                    NationalNo = reader["NationalNo"].ToString();
-                    FirstName = reader["FirstName"].ToString();
-                    SecondName = reader["SecondName"].ToString();
-                    ThirdName = reader["ThirdName"].ToString();
-                    LastName = reader["LastName"].ToString();
-                    Gendor = reader["Gendor"].ToString();
-                    DateOfBirth = (DateTime)reader["DateOfBirth"];
-                    Nationality = reader["Nationality"].ToString();
-                    Phone = reader["Phone"].ToString();
-                    Email = reader["Email"].ToString();
-                    Address = reader["Address"].ToString();
-
+                    dt.Load(reader);
                 }
-                else
-                {
-                    // The record was not found
-                    isFound = false;
-                }
-
                 reader.Close();
             }
             catch (Exception)
             {
-                isFound = false;
+               
             }
             finally
             {
                 connection.Close();
             }
 
-            return isFound;
+            return dt;
         
         }
         public static DataTable GetAllCountries()
@@ -389,6 +332,54 @@ WHERE PersonID = @PersonID;";
                     isFound = true;
 
                     NationalNo = (string)reader["NationalNo"];
+                    FirstName = (string)reader["FirstName"];
+                    SecondName = (string)reader["SecondName"];
+                    ThirdName = (string)reader["ThirdName"];
+                    LastName = (string)reader["LastName"];
+                    DateOfBirth = (DateTime)reader["DateOfBirth"];
+                    Gendor = Convert.ToByte(reader["Gendor"]);
+                    Address = (string)reader["Address"];
+                    Phone = (string)reader["Phone"];
+                    Email = (string)reader["Email"];
+                    NationalityCountryID = (int)reader["NationalityCountryID"];
+
+                    if (reader["ImagePath"] != DBNull.Value)
+                        ImagePath = (string)reader["ImagePath"];
+                    else
+                        ImagePath = "";
+                }
+                reader.Close();
+            }
+            catch (Exception)
+            {
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
+        public static bool GetPersonInfoByNatNo(ref int PersonID,  string NationalNo, ref string FirstName,
+     ref string SecondName, ref string ThirdName, ref string LastName, ref DateTime DateOfBirth,
+     ref byte Gendor, ref string Address, ref string Phone, ref string Email,
+     ref int NationalityCountryID, ref string ImagePath)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(clsPeopleDataAccessSettings.ConnectionString);
+            string query = "SELECT * FROM People WHERE NationalNo = @NationalNo";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@NationalNo", NationalNo);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    isFound = true;
+
+                    PersonID = (int)reader["PersonID"];
                     FirstName = (string)reader["FirstName"];
                     SecondName = (string)reader["SecondName"];
                     ThirdName = (string)reader["ThirdName"];

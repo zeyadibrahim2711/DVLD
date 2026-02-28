@@ -13,18 +13,14 @@ namespace ApplicationsBusinessLayer
         public enum enMode { AddNew = 0, Update = 1 }
         public enMode Mode = enMode.AddNew;
 
-        public enum enApplicationType
-        {
-            NewDrivingLicense = 1, RenewDrivingLicense = 2, ReplaceLostDrivingLicense = 3,
-            ReplaceDamagedDrivingLicense = 4, ReleaseDetainedDrivingLicsense = 5, NewInternationalLicense = 6, RetakeTest = 7
-        };
-        public ClsApplicationTypes ApplicationTypeInfo;
+        public ClsApplicationTypes ApplicationTypeInfo;//important
         public int ApplicationID { get; set; }
         public int ApplicantPersonID { get; set; }
         public DateTime ApplicationDate { get; set; }
         public int ApplicationTypeID { get; set; }
         public enum enApplicationStatus { New = 1, Cancelled = 2, Completed = 3 };
 
+       
         public DateTime LastStatusDate { get; set; }
         public decimal PaidFees { get; set; }
         public int CreatedByUserID { get; set; }
@@ -44,7 +40,7 @@ namespace ApplicationsBusinessLayer
             Mode = enMode.AddNew;
         }
 
-        private ClsApplication(int applicationID, int applicantPersonID, DateTime applicationDate,
+        protected ClsApplication(int applicationID, int applicantPersonID, DateTime applicationDate,
                           int applicationTypeID, enApplicationStatus applicationStatus, DateTime lastStatusDate,
                           decimal paidFees, int createdByUserID)
         {
@@ -52,7 +48,7 @@ namespace ApplicationsBusinessLayer
             this.ApplicantPersonID = applicantPersonID;
             this.ApplicationDate = applicationDate;
             this.ApplicationTypeID = applicationTypeID;
-            this.ApplicationTypeInfo = ClsApplicationTypes.Find(applicationTypeID);
+            this.ApplicationTypeInfo = ClsApplicationTypes.Find(applicationTypeID);//important
             this.ApplicationStatus = applicationStatus;
             this.LastStatusDate = lastStatusDate;
             this.PaidFees = paidFees;
@@ -124,6 +120,12 @@ lastStatusDate, paidFees, createdByUserID);
         {
             return ClsApplicationDataAccess.CancelApplication(applicationID);
         }
+
+        public static bool MakeApplicationComplete(int applicationID)
+        {
+            return ClsApplicationDataAccess.MakeApplicationComplete(applicationID);
+        }
+
         public static bool IsApplicationExist(int applicationID)
         {
             return ClsApplicationDataAccess.IsApplicationExist(applicationID);

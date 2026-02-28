@@ -12,6 +12,12 @@ namespace ApplicationTyoesBusinessLayer
         public int ApplicationTypeID { get; set; }
         public string Title { get; set; }
         public decimal Fees { get; set; }
+        public enum enApplicationType
+        {
+            NewDrivingLicense = 1, RenewDrivingLicense = 2, ReplaceLostDrivingLicense = 3,
+            ReplaceDamagedDrivingLicense = 4, ReleaseDetainedDrivingLicsense = 5, NewInternationalLicense = 6, RetakeTest = 7
+        };
+
         private ClsApplicationTypes(int applicationTypeID, string title, decimal fees)
         {
             ApplicationTypeID = applicationTypeID;
@@ -23,10 +29,7 @@ namespace ApplicationTyoesBusinessLayer
             return ClsApplicationTypesDataAccess.GetAllApplicationTypes();
         }
 
-        public static int CountAllApplicationTypes()
-        {
-            return ClsApplicationTypesDataAccess.CountApplicationTypes();
-        }
+        
         public static ClsApplicationTypes Find(int applicationTypeID)
         {
             string title = "";

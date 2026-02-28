@@ -43,32 +43,7 @@ namespace TestTypesDataAccessLayer
         }
 
       
-        public static int CountTestTypes()
-        {
-            int total = -1;
-
-            using (SqlConnection connection = new SqlConnection(clsPeopleDataAccessSettings.ConnectionString))
-            {
-                string query = "SELECT COUNT(TestTypeID) FROM TestTypes";
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-                try
-                {
-                    connection.Open();
-                    object result = command.ExecuteScalar();
-
-                    if (result != null && int.TryParse(result.ToString(), out int count))
-                        total = count;
-                }
-                catch
-                {
-                }
-            }
-
-            return total;
-        }
-
+       
     
         public static bool UpdateTestType(int TestTypeID, string Title, string Description, decimal Fees)
         {

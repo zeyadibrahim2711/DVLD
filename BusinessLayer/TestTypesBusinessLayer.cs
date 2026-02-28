@@ -32,11 +32,7 @@ namespace BusinessLayer
         }
 
        
-        public static int Count()
-        {
-            return ClsTestTypesDataAccess.CountTestTypes();
-        }
-
+     
         public static ClsTestType Find(int testTypeID)
         {
             string title = "";

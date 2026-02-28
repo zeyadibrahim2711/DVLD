@@ -45,34 +45,7 @@ namespace ApplicationTypesDataAccessLayer
 
             return dt;
         }
-        public static int CountApplicationTypes()
-        {
-            int total = -1;
-
-            using (SqlConnection connection = new SqlConnection(clsPeopleDataAccessSettings.ConnectionString))
-            {
-                string query = "SELECT COUNT(ApplicationTypeID) FROM ApplicationTypes";
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-                try
-                {
-                    connection.Open();
-
-                    object result = command.ExecuteScalar();
-
-                    if (result != null && int.TryParse(result.ToString(), out int count))
-                        total = count;
-                }
-                catch
-                {
-                    // Optional: log error
-                }
-            }
-
-            return total;
-        }
-        public static bool UpdateApplicationType(int ApplicationTypeID, string Title, decimal Fees)
+           public static bool UpdateApplicationType(int ApplicationTypeID, string Title, decimal Fees)
         {
             int rowsAffected = 0;
 

@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestAppiontmentBusinessLayer;
 using UsersDataAccessLayer;
 using static ApplicationsBusinessLayer.ClsApplication;
 using static System.Net.Mime.MediaTypeNames;
@@ -18,11 +19,18 @@ namespace LocalDrivingLicenseApplicationBuisnessLayer
     {
         public enum enMode { AddNew = 0, Update = 1 }
         public enMode Mode = enMode.AddNew;
-
         public int LocalDrivingLicenseApplicationID { get; set; }
         public int LicenseClassID { get; set; }
-        public enApplicationStatus ApplicationStatus { get; set; }
-        public int PassedTests { get; set; }
+        public int PassedTests
+        {
+            get
+            {
+                return (LocalDrivingLicenseApplicationID == -1)
+                    ? 0
+                    : ClsTestAppointment
+                      .CountPassedTests(LocalDrivingLicenseApplicationID);
+            }
+        }
 
         public ClsLocalDrivingLicenseApplication()
         {
@@ -30,54 +38,33 @@ namespace LocalDrivingLicenseApplicationBuisnessLayer
             LicenseClassID = -1;
             Mode = enMode.AddNew;
         }
-        
+
 
         private ClsLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID, int ApplicationID, int LicenseClassID,int applicantPersonID,
-            DateTime applicationDate,int applicationTypeID, enApplicationStatus applicationStatus,DateTime lastStatusDate,decimal paidFees,int createdByUserID)
-        {
-            this.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
-            this.ApplicationID = ApplicationID;
-            this.LicenseClassID = LicenseClassID;
-            this.ApplicantPersonID = applicantPersonID;
-            this.ApplicationDate = applicationDate;
-            this.ApplicationTypeID = applicationTypeID;
-            this.ApplicationTypeInfo = ClsApplicationTypes.Find(applicationTypeID);
-            this.ApplicationStatus = applicationStatus;
-            this.LastStatusDate = lastStatusDate;
-            this.PaidFees = paidFees;
-            this.CreatedByUserID = createdByUserID;
+     DateTime applicationDate,int applicationTypeID,
+     enApplicationStatus applicationStatus,DateTime lastStatusDate,
+     decimal paidFees,int createdByUserID)
 
-            Mode = enMode.Update;
-        }
-        private ClsLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID, int ApplicationID, int LicenseClassID,int PassedTests)
+     : base(ApplicationID, applicantPersonID, applicationDate,
+            applicationTypeID, applicationStatus,
+            lastStatusDate, paidFees, createdByUserID)
         {
             this.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
-            this.ApplicationID = ApplicationID;
             this.LicenseClassID = LicenseClassID;
             Mode = enMode.Update;
-            this.PassedTests = PassedTests;
         }
+
         public static ClsLocalDrivingLicenseApplication FindLocalDrivingLicenseApplicationByID(int LocalID)
         {
             int AppID = -1, ClassID = -1;
-
-
             if (ClsLocalDrivingLicenseApplicationDataAccess.GetLocalDrivingLicenseApplicationByID(LocalID, ref AppID, ref ClassID))
             {
                 ClsApplication Application = ClsApplication.FindApplicationByID(AppID);
+                if (Application == null)
+                    return null;
                 return new ClsLocalDrivingLicenseApplication(LocalID, AppID, ClassID,Application.ApplicantPersonID,Application.ApplicationDate,
                     Application.ApplicationTypeID, (enApplicationStatus)Application.ApplicationStatus,Application.LastStatusDate,Application.PaidFees,Application.CreatedByUserID);
             }
-
-            else
-                return null;
-        }
-        public static ClsLocalDrivingLicenseApplication FindLocalDrivingLicenseApplicationByIDForControl(int LocalID)
-        {
-            int AppID = -1, ClassID = -1,passedtests=-1;
-
-            if (ClsLocalDrivingLicenseApplicationDataAccess.GetLocalDrivingLicenseApplicationByIDForControl(LocalID, ref AppID, ref ClassID,ref passedtests))
-                return new ClsLocalDrivingLicenseApplication(LocalID, AppID, ClassID,passedtests);
 
             else
                 return null;
@@ -97,11 +84,7 @@ namespace LocalDrivingLicenseApplicationBuisnessLayer
         {
             return ClsLocalDrivingLicenseApplicationDataAccess.GetAllLocalDrivingLicenseApplications();
         }
-        public static int CountTotalLocalDrivingLicenseApplications()
-        {
-            return ClsLocalDrivingLicenseApplicationDataAccess.CountLocalDrivingLicenseApplications();
-        }
-        public static bool DeleteLocalDrivingLicenseApplication(int LocalID)
+         public static bool DeleteLocalDrivingLicenseApplication(int LocalID)
         {
             return ClsLocalDrivingLicenseApplicationDataAccess.DeleteLocalDrivingLicenseApplicationByID(LocalID);
         }

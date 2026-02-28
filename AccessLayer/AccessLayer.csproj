@@ -44,12 +44,17 @@
     <Compile Include="ApplicationDataAccessLayer.cs" />
     <Compile Include="ApplicationTypesDataAccessLayer.cs" />
     <Compile Include="CountriesDataAccess.cs" />
+    <Compile Include="DetainedLicenseDataAccessLayer.cs" />
+    <Compile Include="DriversDataAccessLayer.cs" />
+    <Compile Include="InternationalLicenseDataAccessLayer.cs" />
+    <Compile Include="LicenseDataAccessLayer.cs" />
     <Compile Include="LicensesClassesDataAccessLayer.cs" />
     <Compile Include="LocalDrivingLicenseApplicationDataLayer.cs" />
     <Compile Include="PeopleDataAccessLayer.cs" />
     <Compile Include="clsPeopleDataAccessSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestAppiontmentDataAccessLayer.cs" />
+    <Compile Include="TestsDataAccessLayer.cs" />
     <Compile Include="TestTypesDataAccessLayer.cs" />
     <Compile Include="UserDataAccessLayer.cs" />
   </ItemGroup>

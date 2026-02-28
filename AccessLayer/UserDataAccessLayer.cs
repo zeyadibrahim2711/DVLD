@@ -37,35 +37,7 @@ namespace UsersDataAccessLayer
 
             return dt;
         }
-        public static int CountUsers()
-        {
-            int totalUsers = -1;
-
-            SqlConnection connection = new SqlConnection(clsPeopleDataAccessSettings.ConnectionString);
-
-            string query = "SELECT COUNT(UserID) FROM vUsers";
-
-            SqlCommand command = new SqlCommand(query, connection);
-
-            try
-            {
-                connection.Open();
-
-                object result = command.ExecuteScalar();
-
-                if (result != null && int.TryParse(result.ToString(), out int total))
-                {
-                    totalUsers = total;
-                }
-            }
-            catch { }
-            finally
-            {
-                connection.Close();
-            }
-
-            return totalUsers;
-        }
+        
         public static bool GetUserInfo(ref int? UserID,
     ref int? PersonID, ref string FullName, ref string Username, ref bool? IsActive)
         {

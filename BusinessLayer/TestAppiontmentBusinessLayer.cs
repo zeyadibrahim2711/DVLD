@@ -1,8 +1,12 @@
-﻿using ApplicationsBusinessLayer;
+﻿using ApplicationDataAccessLayer;
+using ApplicationsBusinessLayer;
 using LocalDrivingLicenseApplicationDataAccessLayer;
+using PeopleBusinessLayer;
+using PeopleDataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,7 +57,7 @@ namespace TestAppiontmentBusinessLayer
 
         private bool _AddNewTestAppointment()
         {
-            this.TestAppointmentID = ClsTestAppointmentDataAccess.AddNewTestAppointment( this.TestTypeID, this.LocalDrivingLicenseApplicationID,
+            this.TestAppointmentID = ClsTestAppointmentDataAccess.AddNewTestAppointment( this.TestTypeID,this.LocalDrivingLicenseApplicationID,
 this.AppointmentDate, this.PaidFees, this.CreatedByUserID, this.IsLocked);
 
             return (this.TestAppointmentID != -1);
@@ -89,23 +93,77 @@ this.AppointmentDate, this.PaidFees, this.CreatedByUserID, this.IsLocked);
             }
         }
 
-
-        public static DataTable FindTestAppointment(int rowscount)
+        public static ClsTestAppointment FindTestAppointmentByID(int TestAppointmentID)
         {
-            return ClsTestAppointmentDataAccess.FindTestAppointment(rowscount);
+            int TestTypeID = -1; int LocalDrivingLicenseApplicationID = -1;
+            DateTime AppointmentDate = DateTime.Now; decimal PaidFees = 0; int CreatedByUserID = -1; bool IsLocked = false;
+          
+           
+            if (ClsTestAppointmentDataAccess.GetTestAppointmentByID(TestAppointmentID, ref TestTypeID, ref LocalDrivingLicenseApplicationID, ref AppointmentDate,
+                ref PaidFees, ref CreatedByUserID, ref IsLocked))
+            {
+
+                return new ClsTestAppointment(TestAppointmentID, TestTypeID,  LocalDrivingLicenseApplicationID,  AppointmentDate,
+                 PaidFees,  CreatedByUserID, IsLocked);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static ClsTestAppointment FindLatestTestAppointmentForLocalIDAndTestTypeID(int LocalDrivingLicenseApplicationID,int TestTypeID )
+        {
+            int TestAppointmentID=-1;
+           
+            DateTime AppointmentDate = DateTime.Now; decimal PaidFees = 0; int CreatedByUserID = -1; bool IsLocked = false;
+
+
+            if (ClsTestAppointmentDataAccess.GetLatestTestAppointmentForLocalIDAndTestTypeID(ref TestAppointmentID,TestTypeID,  LocalDrivingLicenseApplicationID, ref AppointmentDate,
+                ref PaidFees, ref CreatedByUserID, ref IsLocked))
+            {
+
+                return new ClsTestAppointment(TestAppointmentID, TestTypeID, LocalDrivingLicenseApplicationID, AppointmentDate,
+                 PaidFees, CreatedByUserID, IsLocked);
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public static int CountTestExist(
+
+        public static DataTable FindTestAppointment(int rowscount, int localDrivingLicenseApplicationID,int testTypeID)
+        {
+            return ClsTestAppointmentDataAccess.FindTestAppointment(rowscount, localDrivingLicenseApplicationID,testTypeID);
+        }
+        public static int CountTestAppointmentinDGV (int rowscount ,  int localDrivingLicenseApplicationID)
+        {
+            return ClsTestAppointmentDataAccess.CountRowsinDGV(rowscount,localDrivingLicenseApplicationID);
+        }
+
+
+        public static bool IsTestAppointmentExist(int localDrivingLicenseApplicationID)
+        {
+            return ClsTestAppointmentDataAccess.IsPersonHaveActiveTestAppointment(localDrivingLicenseApplicationID);
+        }
+
+
+        public static int CountTestAppointmentExist(
       int localDrivingLicenseApplicationID,
       string className,
       string fullName,
       int testTypeID)
         {
-            return ClsTestAppointmentDataAccess.CountTestExist(
+            return ClsTestAppointmentDataAccess.CountTestAppointmentExist(
                 localDrivingLicenseApplicationID,
                 className,
                 fullName,
                 testTypeID);
+        }
+
+        public static int CountPassedTests(int LocalDrivingLicenseApplicationID)
+        {
+            return ClsTestAppointmentDataAccess.CountPassedTests(LocalDrivingLicenseApplicationID);
         }
 
     }

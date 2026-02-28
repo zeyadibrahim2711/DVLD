@@ -168,7 +168,32 @@ WHERE ApplicationID = @ApplicationID";
 
             using (SqlConnection connection = new SqlConnection(clsPeopleDataAccessSettings.ConnectionString))
             {
-                string query = "update Applications  Set ApplicationStatus=2    WHERE ApplicationID = @ApplicationID;";
+                string query = "update Applications  Set ApplicationStatus=2   WHERE ApplicationID = @ApplicationID;" +
+                    "";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+
+                try
+                {
+                    connection.Open();
+                    rowsAffected = command.ExecuteNonQuery();
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+
+            return rowsAffected > 0;
+        }
+        public static bool MakeApplicationComplete(int ApplicationID)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsPeopleDataAccessSettings.ConnectionString))
+            {
+                string query = "update Applications  Set ApplicationStatus=3   WHERE ApplicationID = @ApplicationID;";
 
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@ApplicationID", ApplicationID);

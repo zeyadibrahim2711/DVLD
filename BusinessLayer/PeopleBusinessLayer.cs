@@ -107,32 +107,14 @@ namespace PeopleBusinessLayer
         //Sometimes you want to search by PersonID, sometimes by NationalNo, or Name, etc.
         // If personId was just int, you’d always have to pass a value(like 0), and the code would think 0 is a real ID.
         // int?="personId can be an int value or null"
-        public static clsPerson Find(int? personId = null, string nationalNo = null, string firstName = null,
+        public static DataTable FindPersonInfo(int? personId = null, string nationalNo = null, string firstName = null,
    string secondName = null, string thirdName = null, string lastName = null, string gendor =null , DateTime? dateofbirth = null, string nationality = null
    , string phone = null, string email = null,string address=null)
 
         {
-            if (clsPeopleDataAccess.GetPersonInfo(ref personId, ref nationalNo, ref firstName,
-               ref secondName, ref thirdName, ref lastName, ref gendor,ref dateofbirth, ref nationality, ref phone, ref email,ref address))
-            {
-                return new clsPerson(personId ?? -1, nationalNo, firstName, secondName, thirdName, lastName,
-                  gendor, dateofbirth ?? DateTime.Now,nationality,  phone, email,address);
-
-//                Why - 1 ?
-//Because IDs are usually positive numbers(1, 2, 3…).
-//So - 1 is used as a special placeholder meaning "no real ID".
-//That way, your program doesn’t crash when you pass null.
-        
-            }
-            else
-            {
-                return null;
-            }
-
+            return clsPeopleDataAccess.GetPersonInfo(personId, nationalNo, firstName, secondName, thirdName, lastName, gendor,
+             dateofbirth, nationality, phone, email, address);
         }
-        //That means your namespace name is clsPeopleDataAccess.
-        //   But in another place you also have a class with the same name clsPeopleDataAccess inside the namespace PeopleDataAccessLayer.
-
         public static clsPerson FindByID(int PersonID)
         {
             string NationalNo = "", FirstName = "", SecondName = "", ThirdName = "", LastName = "";
@@ -153,7 +135,29 @@ namespace PeopleBusinessLayer
             }
         }
 
-    
+        public static clsPerson FindByNationalNo(string NationalNo)
+        {
+            string FirstName = "", SecondName = "", ThirdName = "", LastName = "";
+            string Address = "", Phone = "", Email = "", ImagePath = "";
+            DateTime DateOfBirth = DateTime.Now;
+            byte Gendor = 0;
+            int NationalityCountryID = -1,PersonID=-1;
+            if (clsPeopleDataAccess.GetPersonInfoByID(PersonID, ref NationalNo, ref FirstName, ref SecondName, ref ThirdName, ref LastName,
+                ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
+            {
+
+                return new clsPerson(PersonID, NationalNo, FirstName, SecondName, ThirdName, LastName,
+                    DateOfBirth, Gendor, Address, Phone, Email, NationalityCountryID, ImagePath);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+
+
 
         private bool _AddNewPerson ()
         {
@@ -204,42 +208,13 @@ namespace PeopleBusinessLayer
         {
             return clsPeopleDataAccess.GetAllPeople();
         }
-        public static DataTable ConvertPersonToDataTable(clsPerson person)
-        {
-            if (person == null)
-                return null;
-
-
-            DataTable dt = clsPeopleDataAccess.GetAllPeople().Clone();
-
-            DataRow row = dt.NewRow();
-
-            row["PersonID"] = person.PersonID;
-            row["NationalNo"] = person.NationalNo;
-            row["FirstName"] = person.FirstName;
-            row["SecondName"] = person.SecondName;
-            row["ThirdName"] = person.ThirdName;
-            row["LastName"] = person.LastName;
-            row["Gendor"] = person.Gender;
-            row["DateOfBirth"] = person.DateOfBirth;
-            row["Nationality"] = person.Nationality;
-            row["Phone"] = person.Phone;
-            row["Email"] = person.Email;
-            row["Address"] = person.Address;
-
-            dt.Rows.Add(row);
-
-            return dt;
-        }
+       
 
         public static DataTable GetAllCountries()
         {
             return clsPeopleDataAccess.GetAllCountries();
         }
-        public static int TotalPeopleNumber()
-        {
-            return clsPeopleDataAccess.CountPeople();
-        }
+      
         public static bool DeletePerson(int PersonID)
         {
             return clsPeopleDataAccess.DeletePerson(PersonID);

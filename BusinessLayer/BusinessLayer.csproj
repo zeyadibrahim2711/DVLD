@@ -44,11 +44,16 @@
     <Compile Include="ApplicationBusinessLayer.cs" />
     <Compile Include="ApplicationTypesBusinessLayer.cs" />
     <Compile Include="CountriesBusinessLayer.cs" />
+    <Compile Include="DetainLicenseBusinessLayer.cs" />
+    <Compile Include="DriversBusinessLayer.cs" />
+    <Compile Include="InternationalLicenseBusinessLayer.cs" />
+    <Compile Include="LicensesBusinessLayer.cs" />
     <Compile Include="LicensesClassesBusinessLayer.cs" />
     <Compile Include="LocalDrivingLicenseApplicationBuisnessLayer.cs" />
     <Compile Include="PeopleBusinessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestAppiontmentBusinessLayer.cs" />
+    <Compile Include="TestsBusinessLayer.cs" />
     <Compile Include="TestTypesBusinessLayer.cs" />
     <Compile Include="UsersBusinessLayer.cs" />
   </ItemGroup>
