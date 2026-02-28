@@ -15,8 +15,9 @@ namespace DVLD_Ep1
     {
         private void _RefreshPeopleList()
         {
-            dvgGetAllRecords.DataSource = clsPerson.GetAllPeople();
-            lbRecordsNum.Text = clsPerson.TotalPeopleNumber().ToString();
+            DataTable dt= clsPerson.GetAllPeople();
+            dvgGetAllRecords.DataSource = dt;
+            lbRecordsNum.Text = dt.Rows.Count.ToString();
         }
         public PeopleManagementForm()
         {
@@ -59,70 +60,70 @@ namespace DVLD_Ep1
 
             string filterValue = tbFilterBy.Text;
            
-            clsPerson result = null;
+            DataTable result = null;
 
             switch (cbFilterBy.SelectedIndex)
             {
                 case 1: // PersonID
                     if (int.TryParse(filterValue, out int personId))
-                        result = clsPerson.Find(personId);
+                        result = clsPerson.FindPersonInfo(personId:personId);
                     else
                         result = null;
                     break;
 
                 case 2: // NationalNo
-                    result = clsPerson.Find(null, filterValue);
+                    result = clsPerson.FindPersonInfo(nationalNo: filterValue);
                     break;
 
                 case 3: // FirstName
-                    result = clsPerson.Find(null, null, filterValue);
+                    result = clsPerson.FindPersonInfo(firstName: filterValue);
                     break;
 
                 case 4: // SecondName
-                    result = clsPerson.Find(null, null, null, filterValue);
+                    result = clsPerson.FindPersonInfo(secondName: filterValue);
                     break;
 
                 case 5: // ThirdName
-                    result = clsPerson.Find(null, null, null, null, filterValue);
+                    result = clsPerson.FindPersonInfo(thirdName: filterValue);
                     break;
 
                 case 6: // LastName
-                    result = clsPerson.Find(null, null, null, null, null, filterValue);
+                    result = clsPerson.FindPersonInfo(lastName: filterValue);
                     break;
 
                 case 7: // Gendor
                   
-                        result = clsPerson.Find(null, null, null, null, null, null,filterValue);
+                        result = clsPerson.FindPersonInfo(gendor:filterValue);
                     break;
 
                 case 8: // DateOfBirth
                     if (DateTime.TryParse(filterValue, out DateTime dob))
-                        result = clsPerson.Find(null, null, null, null, null, null, null, dob);
+                        result = clsPerson.FindPersonInfo(dateofbirth: dob);
                     else
                         result = null;
                     break;
 
                 case 9: // Nationality
-                    result = clsPerson.Find(null, null, null, null, null, null, null, null, filterValue);
+                    result = clsPerson.FindPersonInfo(nationality:filterValue);
                     break;
 
                 case 10: // Phone
-                    result = clsPerson.Find(null, null, null, null, null, null, null, null, null, filterValue);
+                    result = clsPerson.FindPersonInfo(phone: filterValue);
                     break;
 
                 case 11: // Email
-                    result = clsPerson.Find(null, null, null, null, null, null, null, null, null, null, filterValue);
+                    result = clsPerson.FindPersonInfo(email: filterValue);
                     break;
 
                 default: // All or unhandled
-                    result = clsPerson.Find();
+                    result = clsPerson.FindPersonInfo();
                     break;
             }
 
 
             if (result != null)
             {
-                dvgGetAllRecords.DataSource = clsPerson.ConvertPersonToDataTable(result);
+                dvgGetAllRecords.DataSource = result;
             }
             else
             {

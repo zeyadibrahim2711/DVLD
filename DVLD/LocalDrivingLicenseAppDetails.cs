@@ -22,7 +22,7 @@ namespace DVLD_Ep1
 
         public void LoadLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID)
         {
-            _LocalDrivingLicenseApplication = ClsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByIDForControl(LocalDrivingLicenseApplicationID);
+            _LocalDrivingLicenseApplication = ClsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LocalDrivingLicenseApplicationID);
             if (_LocalDrivingLicenseApplication==null)
             {
                 MessageBox.Show("No Local DrivingLicense Application with Local Driving License ApplicationID = " + LocalDrivingLicenseApplicationID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

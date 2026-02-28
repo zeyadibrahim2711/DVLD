@@ -40,7 +40,7 @@ namespace DVLD_Ep1
             lbIDinAppControl.Text = _Application.ApplicationID.ToString();
             lbStatusinAppControl.Text = _Application.ApplicationStatus.ToString();
             lbFeesinAppControl.Text = _Application.PaidFees.ToString();
-            lbTypeinAppControl.Text = _Application.ApplicationTypeInfo.Title;
+            lbTypeinAppControl.Text = _Application.ApplicationTypeInfo.Title;//important
             lbApplicantinAppControl.Text = _Application.ApplicantPersonID.ToString();
             lbDatainAppControl.Text = DateToShort(_Application.ApplicationDate);
             lbStatusDateinAppControl.Text =DateToShort(_Application.LastStatusDate);

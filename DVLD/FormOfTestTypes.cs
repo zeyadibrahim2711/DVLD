@@ -19,8 +19,9 @@ namespace DVLD_Ep1
         }
         private void _RefreshTestTypesList()
         {
-            dvgTestTypes.DataSource = ClsTestType.GetAllTestTypes();
-            lbRecordsNum.Text = ClsTestType.Count().ToString();
+            DataTable dt = ClsTestType.GetAllTestTypes();
+            dvgTestTypes.DataSource = dt;
+            lbRecordsNum.Text = dt.Rows.Count.ToString();
         }
 
 

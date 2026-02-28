@@ -177,7 +177,7 @@ namespace DVLD_Ep1
 
         private void tbNationalNumber_Validating(object sender, CancelEventArgs e)
         {
-            if (clsPerson.Find(null, tbNationalNumber.Text) != null)
+            if (clsPerson.FindPersonInfo(null, tbNationalNumber.Text) != null)
             {
                 e.Cancel = true;
                 tbNationalNumber.Focus();
@@ -264,6 +264,11 @@ namespace DVLD_Ep1
         }
 
         private void tbAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbMode_Click(object sender, EventArgs e)
         {
 
         }

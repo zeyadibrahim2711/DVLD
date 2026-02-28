@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LocalDrivingLicenseApplicationBuisnessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +13,14 @@ namespace DVLD_Ep1
 {
     public partial class FormOfInfoOfLocalDrivingLicenseApplication : Form
     {
-       
+      
         public FormOfInfoOfLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID,int ApplicationID)
         {
 
             InitializeComponent();
             localDrivingLicenseAppDetails1.LoadLocalDrivingLicenseApplication(LocalDrivingLicenseApplicationID);
             applicationBasicDetails1.LoadApplicationBasic(ApplicationID);
+            
         }
 
         private void FormOfInfoOfLocalDrivingLicenseApplication_Load(object sender, EventArgs e)

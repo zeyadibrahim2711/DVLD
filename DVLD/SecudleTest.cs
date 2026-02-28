@@ -20,7 +20,7 @@ namespace DVLD_Ep1
     public partial class SecudleTest : UserControl
     {
         private ClsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
-        private ClsLocalDrivingLicenseApplication _FullLocalDrivingLicenseApplication;
+      
         private ClsTestType _TestType;
 
 
@@ -37,9 +37,7 @@ namespace DVLD_Ep1
         public void LoadTestAppointmentInfo(int LocalDrivingLicenseApplicationID,int TestTypeID)
         {
             gbRetakeTestInfo.Enabled = false;
-            _LocalDrivingLicenseApplication = ClsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByIDForControl(LocalDrivingLicenseApplicationID);
-            _FullLocalDrivingLicenseApplication = ClsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LocalDrivingLicenseApplicationID);
-           
+            _LocalDrivingLicenseApplication = ClsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(LocalDrivingLicenseApplicationID);
             if (_LocalDrivingLicenseApplication == null)
             {
                 MessageBox.Show("No Local DrivingLicense Application with Local Driving License ApplicationID = " + LocalDrivingLicenseApplicationID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -75,12 +73,12 @@ namespace DVLD_Ep1
 
             lbDLApplicationInSecTestControl.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
             lbDClassinSecTestControl.Text = clsLicenseClass.FindLicenseClassByID(_LocalDrivingLicenseApplication.LicenseClassID).ClassName;
-            lbnameinSecTestControl.Text= clsPerson.FindByID(_FullLocalDrivingLicenseApplication.ApplicantPersonID).FullName;
+            lbnameinSecTestControl.Text= clsPerson.FindByID(_LocalDrivingLicenseApplication.ApplicantPersonID).FullName;
             lbFeesinSecTestControl.Text = _TestType.TestTypeFees.ToString();
             dtpDateOfTest.Format = DateTimePickerFormat.Custom;
             dtpDateOfTest.CustomFormat = "dd/MM/yyyy";
-            trial = ClsTestAppointment.CountTestExist(_LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID,
-                lbDClassinSecTestControl.Text,lbnameinSecTestControl.Text,_TestType.TestTypeID);
+            //trial = ClsTestAppointment.CountTestExist(_LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID,
+            //    lbDClassinSecTestControl.Text,lbnameinSecTestControl.Text,_TestType.TestTypeID);
             if (trial>0)
             {
                 gbRetakeTestInfo.Enabled = true;

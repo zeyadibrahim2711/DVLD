@@ -40,6 +40,30 @@ namespace DVLD_Ep1
             _Mode = enMode.AddNew;
             
         }
+        private void UpdateMood()
+        {
+            lbMode.Text = "Update Local Driving License Application";
+            _LocalDrivingLicenseApplication = ClsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(_LocalID);
+            groupBox2.Enabled = false;
+            personDetalisUC1.LoadPersonInfo(_LocalDrivingLicenseApplication.ApplicantPersonID);
+            lbDLApplicationIDInside.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
+            lbApplicationDateInside.Text = DateToShort(_LocalDrivingLicenseApplication.ApplicationDate);
+            cbLicenseClass.SelectedIndex = cbLicenseClass.FindString(clsLicenseClass.FindLicenseClassByID(_LocalDrivingLicenseApplication.LicenseClassID).ClassName);
+            lbApplicationFeesinside.Text = "15";
+            lbCreatedByinside.Text = GlobalUser.CurrentUser.UserName;
+
+        }
+        private void CreateNewLocalDrivingLicense(int VlicenseClassID, int PersonID)
+        {
+            _LocalDrivingLicenseApplication.ApplicationDate = DateTime.Now;
+            _LocalDrivingLicenseApplication.ApplicantPersonID = PersonID;
+            _LocalDrivingLicenseApplication.ApplicationTypeID = 1;
+            _LocalDrivingLicenseApplication.LastStatusDate = DateTime.Now;
+            _LocalDrivingLicenseApplication.PaidFees = 15;
+            _LocalDrivingLicenseApplication.LicenseClassID = VlicenseClassID;
+            _LocalDrivingLicenseApplication.ApplicationStatus = ClsApplication.enApplicationStatus.New;
+            _LocalDrivingLicenseApplication.CreatedByUserID = GlobalUser.CurrentUser.UserID;
+        }
         private void _FillLicensesClassesInComoboBox()
         {
             DataTable dtLicensesClasses = clsLicenseClass.GetAllLicenseClasses();
@@ -62,18 +86,7 @@ namespace DVLD_Ep1
                 _LocalDrivingLicenseApplication = new ClsLocalDrivingLicenseApplication();
                 return;
             }
-            lbMode.Text = "Update Local Driving License Application";
-            _LocalDrivingLicenseApplication = ClsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationByID(_LocalID);
-            groupBox2.Enabled = false;
-            personDetalisUC1.LoadPersonInfo(_LocalDrivingLicenseApplication.ApplicantPersonID);
-            lbDLApplicationIDInside.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
-            lbApplicationDateInside.Text = DateToShort(_LocalDrivingLicenseApplication.ApplicationDate);
-            cbLicenseClass.SelectedIndex = cbLicenseClass.FindString(clsLicenseClass.FindLicenseClassByID(_LocalDrivingLicenseApplication.LicenseClassID).ClassName);
-            lbApplicationFeesinside.Text = "15";
-            lbCreatedByinside.Text = GlobalUser.CurrentUser.UserName;
-
-          
-
+            UpdateMood();
         }
 
         private void FormOfAddEditLocalDrivingLicenseApplication_Load(object sender, EventArgs e)
@@ -95,55 +108,18 @@ namespace DVLD_Ep1
             {
                 case 1: // PersonID
                     if (int.TryParse(filterValue, out int personId))
-                        result = clsPerson.Find(personId);
+                        result = clsPerson.FindByID(personId);
                     else
                         result = null;
                     break;
 
                 case 2: // NationalNo
-                    result = clsPerson.Find(null, filterValue);
+                    result = clsPerson.FindByNationalNo(filterValue);
                     break;
-
-                case 3: // FirstName
-                    result = clsPerson.Find(null, null, filterValue);
-                    break;
-
-                case 4: // SecondName
-                    result = clsPerson.Find(null, null, null, filterValue);
-                    break;
-
-                case 5: // ThirdName
-                    result = clsPerson.Find(null, null, null, null, filterValue);
-                    break;
-
-                case 6: // LastName
-                    result = clsPerson.Find(null, null, null, null, null, filterValue);
-                    break;
-
-                case 7: // Gendor
-                    result = clsPerson.Find(null, null, null, null, null, null, filterValue);
-                    break;
-
-                case 8: // DateOfBirth
-                    if (DateTime.TryParse(filterValue, out DateTime dob))
-                        result = clsPerson.Find(null, null, null, null, null, null, null, dob);
-                    else
-                        result = null;
-                    break;
-
-                case 9: // Nationality
-                    result = clsPerson.Find(null, null, null, null, null, null, null, null, filterValue);
-                    break;
-
-                case 10: // Phone
-                    result = clsPerson.Find(null, null, null, null, null, null, null, null, null, filterValue);
-                    break;
-
-                case 11: // Email
-                    result = clsPerson.Find(null, null, null, null, null, null, null, null, null, null, filterValue);
+                default: // All or unhandled
+                    result = null;
                     break;
             }
-
 
             if (result != null)
                 personDetalisUC1.LoadPersonInfo(result.PersonID);
@@ -186,14 +162,7 @@ namespace DVLD_Ep1
                 return;
             }
 
-            _LocalDrivingLicenseApplication.ApplicationDate = DateTime.Now;
-            _LocalDrivingLicenseApplication.ApplicantPersonID =PersonID;
-            _LocalDrivingLicenseApplication.ApplicationTypeID = 1;
-            _LocalDrivingLicenseApplication.LastStatusDate = DateTime.Now;
-            _LocalDrivingLicenseApplication.PaidFees = 15;
-            _LocalDrivingLicenseApplication.LicenseClassID = VlicenseClassID;
-            _LocalDrivingLicenseApplication.ApplicationStatus = ClsApplication.enApplicationStatus.New;
-            _LocalDrivingLicenseApplication.CreatedByUserID = GlobalUser.CurrentUser.UserID;
+            CreateNewLocalDrivingLicense(VlicenseClassID, PersonID);
 
 
             if (_LocalDrivingLicenseApplication.SaveLocalDrivingLicenseApplication())
@@ -220,7 +189,9 @@ namespace DVLD_Ep1
 
         }
 
-        
-        
+        private void cbLicenseClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

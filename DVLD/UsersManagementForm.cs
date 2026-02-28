@@ -22,8 +22,9 @@ namespace DVLD_Ep1
         }
         private void _RefreshUsersList()
         {
-            dvgGetAllRecordsForUsers.DataSource = clsUser.GetAllUsers();
-            lbRecordsNum.Text = clsUser.TotalUsersNumber().ToString();
+            DataTable dt = clsUser.GetAllUsers();
+            dvgGetAllRecordsForUsers.DataSource = dt;
+            lbRecordsNum.Text = dt.Rows.Count.ToString();
         }
 
         private void UsersManagementForm_Load(object sender, EventArgs e)

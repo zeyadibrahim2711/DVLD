@@ -19,12 +19,14 @@ namespace DVLD_Ep1
         }
         private void _RefreshApplicationTypesList()
         {
-            dvgApplicationTypes.DataSource = ClsApplicationTypes.GetAllApplicationTypes();
-            lbRecordsNum.Text = ClsApplicationTypes.CountAllApplicationTypes().ToString();
+            DataTable dt = ClsApplicationTypes.GetAllApplicationTypes();
+            dvgApplicationTypes.DataSource = dt;
+            lbRecordsNum.Text = dt.Rows.Count.ToString();
         }
         private void FormOfApplicationTypes_Load(object sender, EventArgs e)
         {
             _RefreshApplicationTypesList();
+            dvgApplicationTypes.AutoSize = true;
         }
 
         private void button1_Click(object sender, EventArgs e)

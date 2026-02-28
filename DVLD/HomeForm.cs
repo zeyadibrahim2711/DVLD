@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,6 +33,10 @@ namespace DVLD_Ep1
         private void driversToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            FormOfDrivers frm = new FormOfDrivers();
+            frm.MdiParent = this;//This new form (frm) should open inside the parent form (this),
+                                 //not as a separate window.
+            frm.Show();
         }
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,7 +74,8 @@ namespace DVLD_Ep1
 
         private void relaseDetainToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormOfRealseDetainLicense frm = new FormOfRealseDetainLicense(-1);
+            frm.ShowDialog();
         }
 
         private void manageApplicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,6 +100,47 @@ namespace DVLD_Ep1
         {
             FormOfLocalDrivingLicenseApplication frm = new FormOfLocalDrivingLicenseApplication();
             frm.ShowDialog();
+        }
+
+        private void internationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormOfAddInternationalDrivigLicenseApp frm = new FormOfAddInternationalDrivigLicenseApp();
+            frm.ShowDialog();
+        }
+
+        private void internationalDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormOfinternationalLicenseApp frm = new FormOfinternationalLicenseApp();
+            frm.ShowDialog();
+        }
+
+        private void renewDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormOfRenewLicesneApp frm = new FormOfRenewLicesneApp();
+            frm.ShowDialog();
+        }
+
+        private void replacementForLostOrDamagedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormOfReplacementLicense frm = new FormOfReplacementLicense();
+            frm.ShowDialog();
+        }
+
+        private void detainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormOfDetainLicense frm = new FormOfDetainLicense();
+            frm.ShowDialog();
+        }
+
+        private void manageDetainedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormOfListDetainLicenses frm = new FormOfListDetainLicenses();
+            frm.ShowDialog();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
