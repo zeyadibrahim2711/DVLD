@@ -47,35 +47,7 @@ namespace LocalDrivingLicenseApplicationDataAccessLayer
 
             return dt;
         }
-        public static int CountLocalDrivingLicenseApplications()
-        {
-            int totalLocalDrivingLicenseApplications = -1;
-
-            SqlConnection connection = new SqlConnection(clsPeopleDataAccessSettings.ConnectionString);
-
-            string query = "\tselect Count (*) from vvwLocalDrivingLicenseApplications";
-
-            SqlCommand command = new SqlCommand(query, connection);
-
-            try
-            {
-                connection.Open();
-
-                object result = command.ExecuteScalar();
-
-                if (result != null && int.TryParse(result.ToString(), out int total))
-                {
-                    totalLocalDrivingLicenseApplications = total;
-                }
-            }
-            catch { }
-            finally
-            {
-                connection.Close();
-            }
-
-            return totalLocalDrivingLicenseApplications;
-        }
+        
         public static DataTable FindSingleLocalDrivingLicenseApplication( int? AppID = null,string DrivingClass = null,
     string NationalNo = null,string FullName = null,
     DateTime? ApplicationDate = null,int? PassedTests = null,string Status = null)
@@ -251,12 +223,57 @@ WHERE LocalDrivingLicenseApplicationID = @LocalID;";
 
             return found;
         }
+        public static bool GetLocalDrivingLicenseApplicationByIDForControl(int LocalID, ref int ApplicationID, ref int LicenseClassID,ref int PassedTests)
+        {
+            bool found = false;
+
+            SqlConnection connection = new SqlConnection(clsPeopleDataAccessSettings.ConnectionString);
+
+            string query = @"
+        SELECT *,
+               (
+                   SELECT COUNT(*)
+                   FROM Tests
+                   JOIN TestAppointments 
+                        ON TestAppointments.TestAppointmentID = Tests.TestAppointmentID
+                   WHERE TestAppointments.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID
+                     AND Tests.TestResult = 1
+               ) AS PassedTests
+        FROM LocalDrivingLicenseApplications where LocalDrivingLicenseApplicationID = @LocalID;";
+
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LocalID", LocalID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    found = true;
+                    ApplicationID = (int)reader["ApplicationID"];
+                    LicenseClassID = (int)reader["LicenseClassID"];
+                    PassedTests = (int)reader["PassedTests"];
+                }
+
+                reader.Close();
+            }
+            catch (Exception)
+            {
+                found = false;
+            }
+            finally { connection.Close(); }
+
+            return found;
+        }
         public static bool DeleteLocalDrivingLicenseApplicationByID(int LocalID)
         {
             int rows = 0;
             SqlConnection connection = new SqlConnection(clsPeopleDataAccessSettings.ConnectionString);
 
-            string query ="DELETE FROM LocalDrivingLicenseApplications WHERE LocalDrivingLicenseApplicationID = @LocalID;";
+            string query ="delete FROM LocalDrivingLicenseApplications WHERE LocalDrivingLicenseApplicationID = @LocalID;";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LocalID", LocalID);

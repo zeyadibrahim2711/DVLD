@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOfAddEditLocalDrivingLicenseApplication));
-            this.btnSave = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -40,12 +39,7 @@
             this.lbFindBy = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dtpApplicationDate = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.lbApplicationDateInside = new System.Windows.Forms.Label();
             this.lbCreatedByinside = new System.Windows.Forms.Label();
             this.lbCreatedBy = new System.Windows.Forms.Label();
             this.cbLicenseClass = new System.Windows.Forms.ComboBox();
@@ -55,8 +49,14 @@
             this.lbLicenseClass = new System.Windows.Forms.Label();
             this.lbApplicationDate = new System.Windows.Forms.Label();
             this.lbDLApplicationID = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.lbMode = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.personDetalisUC1 = new DVLD_Ep1.PersonDetalisUC();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -68,20 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = global::DVLD_Ep1.Properties.Resources.Save_32;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(908, 683);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnSave.Size = new System.Drawing.Size(133, 60);
-            this.btnSave.TabIndex = 84;
-            this.btnSave.Text = "  Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tabControl1
             // 
@@ -159,16 +145,7 @@
             this.cbFilterBy.Items.AddRange(new object[] {
             "None",
             "Person ID",
-            "National No",
-            "First Name",
-            "Second Name",
-            "Third Name",
-            "Last Name",
-            "Gender",
-            "DateOfBirth",
-            "Nationality",
-            "Phone",
-            "Email"});
+            "National No"});
             this.cbFilterBy.Location = new System.Drawing.Point(155, 24);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(209, 37);
@@ -200,12 +177,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dtpApplicationDate);
-            this.tabPage2.Controls.Add(this.pictureBox4);
-            this.tabPage2.Controls.Add(this.pictureBox2);
-            this.tabPage2.Controls.Add(this.pictureBox1);
-            this.tabPage2.Controls.Add(this.pictureBox3);
-            this.tabPage2.Controls.Add(this.pictureBox10);
+            this.tabPage2.Controls.Add(this.lbApplicationDateInside);
             this.tabPage2.Controls.Add(this.lbCreatedByinside);
             this.tabPage2.Controls.Add(this.lbCreatedBy);
             this.tabPage2.Controls.Add(this.cbLicenseClass);
@@ -215,6 +187,11 @@
             this.tabPage2.Controls.Add(this.lbLicenseClass);
             this.tabPage2.Controls.Add(this.lbApplicationDate);
             this.tabPage2.Controls.Add(this.lbDLApplicationID);
+            this.tabPage2.Controls.Add(this.pictureBox4);
+            this.tabPage2.Controls.Add(this.pictureBox2);
+            this.tabPage2.Controls.Add(this.pictureBox1);
+            this.tabPage2.Controls.Add(this.pictureBox3);
+            this.tabPage2.Controls.Add(this.pictureBox10);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -224,63 +201,21 @@
             this.tabPage2.Text = "Application Info";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dtpApplicationDate
+            // lbApplicationDateInside
             // 
-            this.dtpApplicationDate.Location = new System.Drawing.Point(244, 156);
-            this.dtpApplicationDate.Name = "dtpApplicationDate";
-            this.dtpApplicationDate.Size = new System.Drawing.Size(303, 24);
-            this.dtpApplicationDate.TabIndex = 82;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(194, 338);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(43, 43);
-            this.pictureBox4.TabIndex = 81;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(194, 277);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(43, 42);
-            this.pictureBox2.TabIndex = 80;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(197, 223);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 39);
-            this.pictureBox1.TabIndex = 79;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::DVLD_Ep1.Properties.Resources.Calendar_32;
-            this.pictureBox3.Location = new System.Drawing.Point(197, 149);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 41);
-            this.pictureBox3.TabIndex = 78;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::DVLD_Ep1.Properties.Resources.Number_32;
-            this.pictureBox10.Location = new System.Drawing.Point(197, 79);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(37, 42);
-            this.pictureBox10.TabIndex = 77;
-            this.pictureBox10.TabStop = false;
+            this.lbApplicationDateInside.AutoSize = true;
+            this.lbApplicationDateInside.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbApplicationDateInside.Location = new System.Drawing.Point(309, 160);
+            this.lbApplicationDateInside.Name = "lbApplicationDateInside";
+            this.lbApplicationDateInside.Size = new System.Drawing.Size(43, 22);
+            this.lbApplicationDateInside.TabIndex = 84;
+            this.lbApplicationDateInside.Text = "???";
             // 
             // lbCreatedByinside
             // 
             this.lbCreatedByinside.AutoSize = true;
             this.lbCreatedByinside.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCreatedByinside.Location = new System.Drawing.Point(240, 349);
+            this.lbCreatedByinside.Location = new System.Drawing.Point(309, 349);
             this.lbCreatedByinside.Name = "lbCreatedByinside";
             this.lbCreatedByinside.Size = new System.Drawing.Size(43, 22);
             this.lbCreatedByinside.TabIndex = 76;
@@ -300,17 +235,18 @@
             // 
             this.cbLicenseClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLicenseClass.FormattingEnabled = true;
-            this.cbLicenseClass.Location = new System.Drawing.Point(244, 223);
+            this.cbLicenseClass.Location = new System.Drawing.Point(273, 236);
             this.cbLicenseClass.Name = "cbLicenseClass";
             this.cbLicenseClass.Size = new System.Drawing.Size(303, 26);
             this.cbLicenseClass.TabIndex = 74;
             this.cbLicenseClass.TabStop = false;
+            this.cbLicenseClass.SelectedIndexChanged += new System.EventHandler(this.cbLicenseClass_SelectedIndexChanged);
             // 
             // lbApplicationFeesinside
             // 
             this.lbApplicationFeesinside.AutoSize = true;
             this.lbApplicationFeesinside.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbApplicationFeesinside.Location = new System.Drawing.Point(240, 287);
+            this.lbApplicationFeesinside.Location = new System.Drawing.Point(309, 287);
             this.lbApplicationFeesinside.Name = "lbApplicationFeesinside";
             this.lbApplicationFeesinside.Size = new System.Drawing.Size(43, 22);
             this.lbApplicationFeesinside.TabIndex = 10;
@@ -320,7 +256,7 @@
             // 
             this.lbDLApplicationIDInside.AutoSize = true;
             this.lbDLApplicationIDInside.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDLApplicationIDInside.Location = new System.Drawing.Point(240, 88);
+            this.lbDLApplicationIDInside.Location = new System.Drawing.Point(309, 86);
             this.lbDLApplicationIDInside.Name = "lbDLApplicationIDInside";
             this.lbDLApplicationIDInside.Size = new System.Drawing.Size(43, 22);
             this.lbDLApplicationIDInside.TabIndex = 7;
@@ -366,6 +302,76 @@
             this.lbDLApplicationID.TabIndex = 0;
             this.lbDLApplicationID.Text = "D.L.Application ID:";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(209, 349);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(54, 40);
+            this.pictureBox4.TabIndex = 81;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(209, 287);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(54, 41);
+            this.pictureBox2.TabIndex = 80;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(209, 223);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 39);
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::DVLD_Ep1.Properties.Resources.Calendar_32;
+            this.pictureBox3.Location = new System.Drawing.Point(209, 146);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(54, 52);
+            this.pictureBox3.TabIndex = 78;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::DVLD_Ep1.Properties.Resources.Number_32;
+            this.pictureBox10.Location = new System.Drawing.Point(209, 71);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(54, 50);
+            this.pictureBox10.TabIndex = 77;
+            this.pictureBox10.TabStop = false;
+            // 
+            // lbMode
+            // 
+            this.lbMode.AutoSize = true;
+            this.lbMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMode.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbMode.Location = new System.Drawing.Point(244, 38);
+            this.lbMode.Name = "lbMode";
+            this.lbMode.Size = new System.Drawing.Size(608, 38);
+            this.lbMode.TabIndex = 82;
+            this.lbMode.Text = "New Local Driving License Application";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = global::DVLD_Ep1.Properties.Resources.Save_32;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(908, 683);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnSave.Size = new System.Drawing.Size(133, 60);
+            this.btnSave.TabIndex = 84;
+            this.btnSave.Text = "  Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -380,23 +386,13 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lbMode
-            // 
-            this.lbMode.AutoSize = true;
-            this.lbMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMode.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbMode.Location = new System.Drawing.Point(244, 38);
-            this.lbMode.Name = "lbMode";
-            this.lbMode.Size = new System.Drawing.Size(608, 38);
-            this.lbMode.TabIndex = 82;
-            this.lbMode.Text = "New Local Driving License Application";
-            // 
             // personDetalisUC1
             // 
             this.personDetalisUC1.Location = new System.Drawing.Point(0, 101);
             this.personDetalisUC1.Name = "personDetalisUC1";
             this.personDetalisUC1.Size = new System.Drawing.Size(1037, 347);
             this.personDetalisUC1.TabIndex = 83;
+            this.personDetalisUC1.Load += new System.EventHandler(this.personDetalisUC1_Load);
             // 
             // FormOfAddEditLocalDrivingLicenseApplication
             // 
@@ -407,7 +403,9 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lbMode);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormOfAddEditLocalDrivingLicenseApplication";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddEditLocalDrivingLicenseApplication";
             this.Load += new System.EventHandler(this.FormOfAddEditLocalDrivingLicenseApplication_Load);
             this.tabControl1.ResumeLayout(false);
@@ -456,6 +454,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.DateTimePicker dtpApplicationDate;
+        private System.Windows.Forms.Label lbApplicationDateInside;
     }
 }

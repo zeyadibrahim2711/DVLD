@@ -201,7 +201,9 @@
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.userDetailsUC1);
             this.Controls.Add(this.personDetalisUC1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormOfChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormOfChangePassword";
             this.Load += new System.EventHandler(this.FormOfChangePassword_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

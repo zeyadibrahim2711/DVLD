@@ -35,19 +35,12 @@ namespace DVLD_Ep1
             else
                 _Mode = enMode.Update;
         }
-        private void LoadData()
+        private void _UpdateUserMode()
         {
-            if (_Mode == enMode.AddNew)
-            {
-                lbMode.Text = "Add New User ";
-                _User = new clsUser();
-                return;
-            }
-            _User = clsUser.FindByUserID(_UserID);
-
-
             lbMode.Text = "Update User";
             groupBox2.Enabled = false;
+            cbFilterBy.SelectedIndex = 1;
+            tbFilterBy.Text = _User.PersonID.ToString();
             personDetalisUC1.LoadPersonInfo(_User.PersonID);
 
             // Fill textboxes
@@ -62,6 +55,38 @@ namespace DVLD_Ep1
             else
                 cbIsActive.Checked = false;
 
+        }
+        private void _AddNewUserMode()
+        {
+            _User.UserName = tbUserName.Text;
+            _User.Password = tbPassword.Text;
+
+            // Confirm password check
+            if (tbPassword.Text == tbConfirmPassword.Text)
+            {
+                _User.Password = tbPassword.Text;
+            }
+            else
+            {
+                MessageBox.Show("Passwords do not match!");
+                return;
+            }
+
+            // IsActive from checkbox
+            _User.IsActive = cbIsActive.Checked ? true : false;
+        }
+        private void LoadData()
+        {
+            if (_Mode == enMode.AddNew)
+            {
+                lbMode.Text = "Add New User ";
+                _User = new clsUser();
+                return;
+            }
+            _User = clsUser.FindByUserID(_UserID);
+
+
+            _UpdateUserMode();
             //// If user is linked to person
             //if (_User.PersonID > 0)
             //{
@@ -93,22 +118,7 @@ namespace DVLD_Ep1
                 _User.PersonID = result.PersonID;
             }
 
-            _User.UserName = tbUserName.Text;
-            _User.Password = tbPassword.Text;
-
-            // Confirm password check
-            if (tbPassword.Text == tbConfirmPassword.Text)
-            {
-                _User.Password = tbPassword.Text;
-            }
-            else
-            {
-                MessageBox.Show("Passwords do not match!");
-                return;
-            }
-
-            // IsActive from checkbox
-            _User.IsActive = cbIsActive.Checked?true:false;
+            _AddNewUserMode();
 
             if (_User.Save())
 
@@ -132,72 +142,25 @@ namespace DVLD_Ep1
         clsPerson result = null;
         private void btnPersonSearch_Click(object sender, EventArgs e)
         {
-            // 1: PersonID, 2: NationalNo, 3: FirstName, 4: SecondName, 
-            // 5: ThirdName, 6: LastName, 7: Gendor, 
-            // 8: DateOfBirth, 9: Nationality, 10: Phone, 11: Email
+            // 1: PersonID, 2: NationalNo;
 
             string filterValue = tbFilterBy.Text;
-
-            
-
             switch (cbFilterBy.SelectedIndex)
             {
                 case 1: // PersonID
                     if (int.TryParse(filterValue, out int personId))
-                        result = clsPerson.Find(personId);
+                        result = clsPerson.FindByID(personId);
                     else
                         result = null;
                     break;
 
                 case 2: // NationalNo
-                    result = clsPerson.Find(null, filterValue);
+                    result = clsPerson.FindByNationalNo(filterValue);
                     break;
-
-                case 3: // FirstName
-                    result = clsPerson.Find(null, null, filterValue);
-                    break;
-
-                case 4: // SecondName
-                    result = clsPerson.Find(null, null, null, filterValue);
-                    break;
-
-                case 5: // ThirdName
-                    result = clsPerson.Find(null, null, null, null, filterValue);
-                    break;
-
-                case 6: // LastName
-                    result = clsPerson.Find(null, null, null, null, null, filterValue);
-                    break;
-
-                case 7: // Gendor
-                        result = clsPerson.Find(null, null, null, null, null, null, filterValue);
-                    break;
-
-                case 8: // DateOfBirth
-                    if (DateTime.TryParse(filterValue, out DateTime dob))
-                        result = clsPerson.Find(null, null, null, null, null, null, null, dob);
-                    else
-                        result = null;
-                    break;
-
-                case 9: // Nationality
-                    result = clsPerson.Find(null, null, null, null, null, null, null, null, filterValue);
-                    break;
-
-                case 10: // Phone
-                    result = clsPerson.Find(null, null, null, null, null, null, null, null, null, filterValue);
-                    break;
-
-                case 11: // Email
-                    result = clsPerson.Find(null, null, null, null, null, null, null, null, null, null, filterValue);
-                    break;
-
                 default: // All or unhandled
-                    result = clsPerson.Find();
+                    result = null;
                     break;
             }
-
-
             if (result != null)
                 personDetalisUC1.LoadPersonInfo(result.PersonID);
             else
@@ -215,6 +178,11 @@ namespace DVLD_Ep1
             }
             else
                 tabControl1.SelectedTab = tabPage2;
+        }
+
+        private void personDetalisUC1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

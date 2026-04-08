@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ApplicationTyoesBusinessLayer;
+using ApplicationTypesDataAccessLayer;
+using System;
 using System.Data;
 using TestTypesDataAccessLayer;
 
@@ -30,9 +32,21 @@ namespace BusinessLayer
         }
 
        
-        public static int Count()
+     
+        public static ClsTestType Find(int testTypeID)
         {
-            return ClsTestTypesDataAccess.CountTestTypes();
+            string title = "";
+            string description = "";
+            decimal fees = 0;
+
+            if (ClsTestTypesDataAccess.GetTestTypeByID(testTypeID, ref title,ref description, ref fees))
+            {
+                return new ClsTestType(testTypeID, title, description,fees);
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }

@@ -31,10 +31,14 @@
             this.lbMode = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.personDetalisUC1 = new DVLD_Ep1.PersonDetalisUC();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPersonSearch = new System.Windows.Forms.Button();
+            this.btnAddNewPerson = new System.Windows.Forms.Button();
             this.tbFilterBy = new System.Windows.Forms.TextBox();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.lbFindBy = new System.Windows.Forms.Label();
+            this.btnNext = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cbIsActive = new System.Windows.Forms.CheckBox();
             this.lbUserIDInside = new System.Windows.Forms.Label();
@@ -45,11 +49,7 @@
             this.lbPassword = new System.Windows.Forms.Label();
             this.lbUserName = new System.Windows.Forms.Label();
             this.lbUserId = new System.Windows.Forms.Label();
-            this.personDetalisUC1 = new DVLD_Ep1.PersonDetalisUC();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnPersonSearch = new System.Windows.Forms.Button();
-            this.btnAddNewPerson = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -62,7 +62,7 @@
             this.lbMode.AutoSize = true;
             this.lbMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMode.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbMode.Location = new System.Drawing.Point(411, 38);
+            this.lbMode.Location = new System.Drawing.Point(458, 49);
             this.lbMode.Name = "lbMode";
             this.lbMode.Size = new System.Drawing.Size(241, 38);
             this.lbMode.TabIndex = 59;
@@ -92,6 +92,14 @@
             this.tabPage1.Text = "Personal Info";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // personDetalisUC1
+            // 
+            this.personDetalisUC1.Location = new System.Drawing.Point(0, 101);
+            this.personDetalisUC1.Name = "personDetalisUC1";
+            this.personDetalisUC1.Size = new System.Drawing.Size(1037, 347);
+            this.personDetalisUC1.TabIndex = 83;
+            this.personDetalisUC1.Load += new System.EventHandler(this.personDetalisUC1_Load);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnPersonSearch);
@@ -106,6 +114,28 @@
             this.groupBox2.TabIndex = 82;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filter";
+            // 
+            // btnPersonSearch
+            // 
+            this.btnPersonSearch.Image = global::DVLD_Ep1.Properties.Resources.SearchPerson1;
+            this.btnPersonSearch.Location = new System.Drawing.Point(590, 19);
+            this.btnPersonSearch.Name = "btnPersonSearch";
+            this.btnPersonSearch.Size = new System.Drawing.Size(48, 48);
+            this.btnPersonSearch.TabIndex = 13;
+            this.btnPersonSearch.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPersonSearch.UseVisualStyleBackColor = true;
+            this.btnPersonSearch.Click += new System.EventHandler(this.btnPersonSearch_Click);
+            // 
+            // btnAddNewPerson
+            // 
+            this.btnAddNewPerson.Image = global::DVLD_Ep1.Properties.Resources.AddPerson_322;
+            this.btnAddNewPerson.Location = new System.Drawing.Point(660, 19);
+            this.btnAddNewPerson.Name = "btnAddNewPerson";
+            this.btnAddNewPerson.Size = new System.Drawing.Size(48, 48);
+            this.btnAddNewPerson.TabIndex = 12;
+            this.btnAddNewPerson.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddNewPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
             // tbFilterBy
             // 
@@ -122,16 +152,7 @@
             this.cbFilterBy.Items.AddRange(new object[] {
             "None",
             "Person ID",
-            "National No",
-            "First Name",
-            "Second Name",
-            "Third Name",
-            "Last Name",
-            "Gender",
-            "DateOfBirth",
-            "Nationality",
-            "Phone",
-            "Email"});
+            "National No"});
             this.cbFilterBy.Location = new System.Drawing.Point(155, 24);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(209, 37);
@@ -146,6 +167,20 @@
             this.lbFindBy.Size = new System.Drawing.Size(84, 25);
             this.lbFindBy.TabIndex = 9;
             this.lbFindBy.Text = "Find By:";
+            // 
+            // btnNext
+            // 
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Image = global::DVLD_Ep1.Properties.Resources.Next_32;
+            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNext.Location = new System.Drawing.Point(787, 463);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnNext.Size = new System.Drawing.Size(132, 43);
+            this.btnNext.TabIndex = 81;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // tabPage2
             // 
@@ -253,13 +288,6 @@
             this.lbUserId.TabIndex = 0;
             this.lbUserId.Text = "UserID :";
             // 
-            // personDetalisUC1
-            // 
-            this.personDetalisUC1.Location = new System.Drawing.Point(0, 101);
-            this.personDetalisUC1.Name = "personDetalisUC1";
-            this.personDetalisUC1.Size = new System.Drawing.Size(1037, 347);
-            this.personDetalisUC1.TabIndex = 83;
-            // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -273,42 +301,6 @@
             this.btnSave.Text = "  Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnPersonSearch
-            // 
-            this.btnPersonSearch.Image = global::DVLD_Ep1.Properties.Resources.SearchPerson1;
-            this.btnPersonSearch.Location = new System.Drawing.Point(590, 19);
-            this.btnPersonSearch.Name = "btnPersonSearch";
-            this.btnPersonSearch.Size = new System.Drawing.Size(48, 48);
-            this.btnPersonSearch.TabIndex = 13;
-            this.btnPersonSearch.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPersonSearch.UseVisualStyleBackColor = true;
-            this.btnPersonSearch.Click += new System.EventHandler(this.btnPersonSearch_Click);
-            // 
-            // btnAddNewPerson
-            // 
-            this.btnAddNewPerson.Image = global::DVLD_Ep1.Properties.Resources.AddPerson_322;
-            this.btnAddNewPerson.Location = new System.Drawing.Point(660, 19);
-            this.btnAddNewPerson.Name = "btnAddNewPerson";
-            this.btnAddNewPerson.Size = new System.Drawing.Size(48, 48);
-            this.btnAddNewPerson.TabIndex = 12;
-            this.btnAddNewPerson.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddNewPerson.UseVisualStyleBackColor = true;
-            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Image = global::DVLD_Ep1.Properties.Resources.Next_32;
-            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNext.Location = new System.Drawing.Point(787, 463);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnNext.Size = new System.Drawing.Size(132, 43);
-            this.btnNext.TabIndex = 81;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnClose
             // 
@@ -333,7 +325,9 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lbMode);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormOfAddEditNewUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddEditNewUser";
             this.Load += new System.EventHandler(this.FormOfAddEditNewUser_Load);
             this.tabControl1.ResumeLayout(false);

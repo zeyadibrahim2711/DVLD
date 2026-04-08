@@ -35,6 +35,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.DirectoryServices.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationBasicDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ApplicationBasicDetails.Designer.cs">
+      <DependentUpon>ApplicationBasicDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DriverLicenseDetailsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DriverLicenseDetailsUC.Designer.cs">
+      <DependentUpon>DriverLicenseDetailsUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOfAddEditLocalDrivingLicenseApplication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,17 +80,23 @@
       <DependentUpon>FormOfAddEditNewUser.cs</DependentUpon>
     </Compile>
     <Compile Include="ClsUtl.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FormOfLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormOfLogin.Designer.cs">
+      <DependentUpon>FormOfLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOfAddEditNewPerson.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormOfAddEditNewPerson.Designer.cs">
       <DependentUpon>FormOfAddEditNewPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfAddInternationalDrivigLicenseApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfAddInternationalDrivigLicenseApp.Designer.cs">
+      <DependentUpon>FormOfAddInternationalDrivigLicenseApp.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOfApplicationTypes.cs">
       <SubType>Form</SubType>
@@ -89,6 +110,54 @@
     <Compile Include="FormOfChangePassword.Designer.cs">
       <DependentUpon>FormOfChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOfDetainLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfDetainLicense.Designer.cs">
+      <DependentUpon>FormOfDetainLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfDrivers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfDrivers.Designer.cs">
+      <DependentUpon>FormOfDrivers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfInfoOfLocalDrivingLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfInfoOfLocalDrivingLicenseApplication.Designer.cs">
+      <DependentUpon>FormOfInfoOfLocalDrivingLicenseApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfinternationalLicenseApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfinternationalLicenseApp.Designer.cs">
+      <DependentUpon>FormOfinternationalLicenseApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfInternationalLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfInternationalLicenseInfo.Designer.cs">
+      <DependentUpon>FormOfInternationalLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfLicenseHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfLicenseHistory.Designer.cs">
+      <DependentUpon>FormOfLicenseHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfLicenseInfo.Designer.cs">
+      <DependentUpon>FormOfLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfListDetainLicenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfListDetainLicenses.Designer.cs">
+      <DependentUpon>FormOfListDetainLicenses.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOfLocalDrivingLicenseApplication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +169,36 @@
     </Compile>
     <Compile Include="FormOfPersonDetails.Designer.cs">
       <DependentUpon>FormOfPersonDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfRealseDetainLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfRealseDetainLicense.Designer.cs">
+      <DependentUpon>FormOfRealseDetainLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfRenewLicesneApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfRenewLicesneApp.Designer.cs">
+      <DependentUpon>FormOfRenewLicesneApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfReplacementLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfReplacementLicense.Designer.cs">
+      <DependentUpon>FormOfReplacementLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfSechudleVisionTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfSechudleVisionTest.Designer.cs">
+      <DependentUpon>FormOfSechudleVisionTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOfTakeTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfTakeTest.Designer.cs">
+      <DependentUpon>FormOfTakeTest.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOfTestTypes.cs">
       <SubType>Form</SubType>
@@ -119,12 +218,36 @@
     <Compile Include="FormOfUserDetails.Designer.cs">
       <DependentUpon>FormOfUserDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOfVisionTestAppiontment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOfVisionTestAppiontment.Designer.cs">
+      <DependentUpon>FormOfVisionTestAppiontment.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalUser.cs" />
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InternationalDriverLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InternationalDriverLicenseInfo.Designer.cs">
+      <DependentUpon>InternationalDriverLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IssueDriverLicenseForTheFirstTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssueDriverLicenseForTheFirstTime.Designer.cs">
+      <DependentUpon>IssueDriverLicenseForTheFirstTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalDrivingLicenseAppDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocalDrivingLicenseAppDetails.Designer.cs">
+      <DependentUpon>LocalDrivingLicenseAppDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="PeopleManagementForm.cs">
       <SubType>Form</SubType>
@@ -140,6 +263,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecudleTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SecudleTest.Designer.cs">
+      <DependentUpon>SecudleTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserDetailsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,14 +281,20 @@
     <Compile Include="UsersManagementForm.Designer.cs">
       <DependentUpon>UsersManagementForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ApplicationBasicDetails.resx">
+      <DependentUpon>ApplicationBasicDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverLicenseDetailsUC.resx">
+      <DependentUpon>DriverLicenseDetailsUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOfAddEditLocalDrivingLicenseApplication.resx">
       <DependentUpon>FormOfAddEditLocalDrivingLicenseApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditPersonUC.resx">
       <DependentUpon>AddEditPersonUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormOfLogin.resx">
+      <DependentUpon>FormOfLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOfAddEditNewPerson.resx">
       <DependentUpon>FormOfAddEditNewPerson.cs</DependentUpon>
@@ -167,17 +302,59 @@
     <EmbeddedResource Include="FormOfAddEditNewUser.resx">
       <DependentUpon>FormOfAddEditNewUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOfAddInternationalDrivigLicenseApp.resx">
+      <DependentUpon>FormOfAddInternationalDrivigLicenseApp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOfApplicationTypes.resx">
       <DependentUpon>FormOfApplicationTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOfChangePassword.resx">
       <DependentUpon>FormOfChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOfDetainLicense.resx">
+      <DependentUpon>FormOfDetainLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOfDrivers.resx">
+      <DependentUpon>FormOfDrivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOfInfoOfLocalDrivingLicenseApplication.resx">
+      <DependentUpon>FormOfInfoOfLocalDrivingLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOfinternationalLicenseApp.resx">
+      <DependentUpon>FormOfinternationalLicenseApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOfInternationalLicenseInfo.resx">
+      <DependentUpon>FormOfInternationalLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOfLicenseHistory.resx">
+      <DependentUpon>FormOfLicenseHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOfLicenseInfo.resx">
+      <DependentUpon>FormOfLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOfListDetainLicenses.resx">
+      <DependentUpon>FormOfListDetainLicenses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOfLocalDrivingLicenseApplication.resx">
       <DependentUpon>FormOfLocalDrivingLicenseApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOfPersonDetails.resx">
       <DependentUpon>FormOfPersonDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOfRealseDetainLicense.resx">
+      <DependentUpon>FormOfRealseDetainLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOfRenewLicesneApp.resx">
+      <DependentUpon>FormOfRenewLicesneApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOfReplacementLicense.resx">
+      <DependentUpon>FormOfReplacementLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOfSechudleVisionTest.resx">
+      <DependentUpon>FormOfSechudleVisionTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOfTakeTest.resx">
+      <DependentUpon>FormOfTakeTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOfTestTypes.resx">
       <DependentUpon>FormOfTestTypes.cs</DependentUpon>
@@ -188,8 +365,20 @@
     <EmbeddedResource Include="FormOfUserDetails.resx">
       <DependentUpon>FormOfUserDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOfVisionTestAppiontment.resx">
+      <DependentUpon>FormOfVisionTestAppiontment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternationalDriverLicenseInfo.resx">
+      <DependentUpon>InternationalDriverLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IssueDriverLicenseForTheFirstTime.resx">
+      <DependentUpon>IssueDriverLicenseForTheFirstTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalDrivingLicenseAppDetails.resx">
+      <DependentUpon>LocalDrivingLicenseAppDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PeopleManagementForm.resx">
       <DependentUpon>PeopleManagementForm.cs</DependentUpon>
@@ -201,6 +390,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecudleTest.resx">
+      <DependentUpon>SecudleTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserDetailsUC.resx">
       <DependentUpon>UserDetailsUC.cs</DependentUpon>
@@ -405,6 +597,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\New Driving License 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vision Test 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Written Test 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Street Test 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Release Detained License 32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

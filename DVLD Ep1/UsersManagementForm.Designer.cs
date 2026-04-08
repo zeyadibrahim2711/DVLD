@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbFilterBy = new System.Windows.Forms.TextBox();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.lbFilterBy = new System.Windows.Forms.Label();
@@ -93,16 +95,32 @@
             this.dvgGetAllRecordsForUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dvgGetAllRecordsForUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dvgGetAllRecordsForUsers.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgGetAllRecordsForUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dvgGetAllRecordsForUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgGetAllRecordsForUsers.ContextMenuStrip = this.contextMenuStrip1;
-            this.dvgGetAllRecordsForUsers.Location = new System.Drawing.Point(1, 364);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dvgGetAllRecordsForUsers.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dvgGetAllRecordsForUsers.Location = new System.Drawing.Point(26, 400);
             this.dvgGetAllRecordsForUsers.MultiSelect = false;
             this.dvgGetAllRecordsForUsers.Name = "dvgGetAllRecordsForUsers";
             this.dvgGetAllRecordsForUsers.ReadOnly = true;
             this.dvgGetAllRecordsForUsers.RowHeadersWidth = 51;
             this.dvgGetAllRecordsForUsers.RowTemplate.Height = 24;
             this.dvgGetAllRecordsForUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgGetAllRecordsForUsers.Size = new System.Drawing.Size(1457, 319);
+            this.dvgGetAllRecordsForUsers.Size = new System.Drawing.Size(1399, 280);
             this.dvgGetAllRecordsForUsers.TabIndex = 12;
             this.dvgGetAllRecordsForUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgGetAllRecordsForUsers_CellContentClick);
             // 
@@ -166,11 +184,11 @@
             // lbManagePeople
             // 
             this.lbManagePeople.AutoSize = true;
-            this.lbManagePeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManagePeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbManagePeople.ForeColor = System.Drawing.Color.Red;
-            this.lbManagePeople.Location = new System.Drawing.Point(567, 225);
+            this.lbManagePeople.Location = new System.Drawing.Point(568, 243);
             this.lbManagePeople.Name = "lbManagePeople";
-            this.lbManagePeople.Size = new System.Drawing.Size(208, 36);
+            this.lbManagePeople.Size = new System.Drawing.Size(262, 42);
             this.lbManagePeople.TabIndex = 11;
             this.lbManagePeople.Text = "Manage Users";
             // 
@@ -220,7 +238,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD_Ep1.Properties.Resources.Users_2_400;
-            this.pictureBox1.Location = new System.Drawing.Point(563, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(595, 38);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(212, 190);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -242,7 +260,9 @@
             this.Controls.Add(this.dvgGetAllRecordsForUsers);
             this.Controls.Add(this.lbManagePeople);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "UsersManagementForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "UsersManagementForm";
             this.Load += new System.EventHandler(this.UsersManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgGetAllRecordsForUsers)).EndInit();

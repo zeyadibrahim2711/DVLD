@@ -1,4 +1,5 @@
 ﻿using ApplicationsBusinessLayer;
+using ApplicationTyoesBusinessLayer;
 using LocalDrivingLicenseApplicationDataAccessLayer;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,10 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestAppiontmentBusinessLayer;
 using UsersDataAccessLayer;
+using static ApplicationsBusinessLayer.ClsApplication;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace LocalDrivingLicenseApplicationBuisnessLayer
@@ -15,32 +19,52 @@ namespace LocalDrivingLicenseApplicationBuisnessLayer
     {
         public enum enMode { AddNew = 0, Update = 1 }
         public enMode Mode = enMode.AddNew;
-
         public int LocalDrivingLicenseApplicationID { get; set; }
         public int LicenseClassID { get; set; }
-        public enApplicationStatus ApplicationStatus { get; set; }
+        public int PassedTests
+        {
+            get
+            {
+                return (LocalDrivingLicenseApplicationID == -1)
+                    ? 0
+                    : ClsTestAppointment
+                      .CountPassedTests(LocalDrivingLicenseApplicationID);
+            }
+        }
 
         public ClsLocalDrivingLicenseApplication()
         {
             LocalDrivingLicenseApplicationID = -1;
-            ApplicationID = -1;
             LicenseClassID = -1;
             Mode = enMode.AddNew;
         }
-   
-        private ClsLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID, int ApplicationID, int LicenseClassID)
+
+
+        private ClsLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID, int ApplicationID, int LicenseClassID,int applicantPersonID,
+     DateTime applicationDate,int applicationTypeID,
+     enApplicationStatus applicationStatus,DateTime lastStatusDate,
+     decimal paidFees,int createdByUserID)
+
+     : base(ApplicationID, applicantPersonID, applicationDate,
+            applicationTypeID, applicationStatus,
+            lastStatusDate, paidFees, createdByUserID)
         {
             this.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
-            this.ApplicationID = ApplicationID;
             this.LicenseClassID = LicenseClassID;
             Mode = enMode.Update;
         }
+
         public static ClsLocalDrivingLicenseApplication FindLocalDrivingLicenseApplicationByID(int LocalID)
         {
             int AppID = -1, ClassID = -1;
-
             if (ClsLocalDrivingLicenseApplicationDataAccess.GetLocalDrivingLicenseApplicationByID(LocalID, ref AppID, ref ClassID))
-                return new ClsLocalDrivingLicenseApplication(LocalID, AppID, ClassID);
+            {
+                ClsApplication Application = ClsApplication.FindApplicationByID(AppID);
+                if (Application == null)
+                    return null;
+                return new ClsLocalDrivingLicenseApplication(LocalID, AppID, ClassID,Application.ApplicantPersonID,Application.ApplicationDate,
+                    Application.ApplicationTypeID, (enApplicationStatus)Application.ApplicationStatus,Application.LastStatusDate,Application.PaidFees,Application.CreatedByUserID);
+            }
 
             else
                 return null;
@@ -60,9 +84,9 @@ namespace LocalDrivingLicenseApplicationBuisnessLayer
         {
             return ClsLocalDrivingLicenseApplicationDataAccess.GetAllLocalDrivingLicenseApplications();
         }
-        public static int CountTotalLocalDrivingLicenseApplications()
+         public static bool DeleteLocalDrivingLicenseApplication(int LocalID)
         {
-            return ClsLocalDrivingLicenseApplicationDataAccess.CountLocalDrivingLicenseApplications();
+            return ClsLocalDrivingLicenseApplicationDataAccess.DeleteLocalDrivingLicenseApplicationByID(LocalID);
         }
         public bool SaveLocalDrivingLicenseApplication()
         {

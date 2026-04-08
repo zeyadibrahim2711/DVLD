@@ -49,6 +49,7 @@
             this.personDetalisUC1.Name = "personDetalisUC1";
             this.personDetalisUC1.Size = new System.Drawing.Size(917, 335);
             this.personDetalisUC1.TabIndex = 0;
+            this.personDetalisUC1.Load += new System.EventHandler(this.personDetalisUC1_Load);
             // 
             // FormOfPersonDetails
             // 
@@ -57,7 +58,9 @@
             this.ClientSize = new System.Drawing.Size(961, 458);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.personDetalisUC1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormOfPersonDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormOfPersonDetails";
             this.Load += new System.EventHandler(this.FormOfPersonDetails_Load);
             this.ResumeLayout(false);

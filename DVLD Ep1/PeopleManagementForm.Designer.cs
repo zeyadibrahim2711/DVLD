@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PeopleManagementForm));
             this.lbManagePeople = new System.Windows.Forms.Label();
             this.dvgGetAllRecords = new System.Windows.Forms.DataGridView();
@@ -64,15 +66,34 @@
             // 
             this.dvgGetAllRecords.AllowUserToAddRows = false;
             this.dvgGetAllRecords.AllowUserToDeleteRows = false;
+            this.dvgGetAllRecords.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dvgGetAllRecords.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dvgGetAllRecords.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgGetAllRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dvgGetAllRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgGetAllRecords.ContextMenuStrip = this.contextMenuStrip1;
-            this.dvgGetAllRecords.Location = new System.Drawing.Point(1, 376);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semilight", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dvgGetAllRecords.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dvgGetAllRecords.Location = new System.Drawing.Point(12, 376);
             this.dvgGetAllRecords.Name = "dvgGetAllRecords";
             this.dvgGetAllRecords.ReadOnly = true;
             this.dvgGetAllRecords.RowHeadersWidth = 51;
             this.dvgGetAllRecords.RowTemplate.Height = 24;
-            this.dvgGetAllRecords.Size = new System.Drawing.Size(1470, 300);
+            this.dvgGetAllRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dvgGetAllRecords.Size = new System.Drawing.Size(1470, 351);
             this.dvgGetAllRecords.TabIndex = 2;
             this.dvgGetAllRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgGetAllRecords_CellContentClick);
             // 
@@ -219,7 +240,9 @@
             this.Controls.Add(this.dvgGetAllRecords);
             this.Controls.Add(this.lbManagePeople);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PeopleManagementForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "PeopleManagementForm";
             this.Load += new System.EventHandler(this.PeopleManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgGetAllRecords)).EndInit();

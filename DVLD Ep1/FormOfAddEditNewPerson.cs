@@ -1,4 +1,6 @@
-﻿using DVLD_Ep1.Properties;
+﻿using CountriesBusinessLayer;
+using DVLD_Ep1;
+using DVLD_Ep1.Properties;
 using PeopleBusinessLayer;
 using System;
 using System.Collections.Generic;
@@ -6,13 +8,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Contracts;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 using System.Windows.Forms;
-using DVLD_Ep1;
-using CountriesBusinessLayer;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
 namespace DVLD_Ep1
@@ -33,6 +34,49 @@ namespace DVLD_Ep1
             }
             else
                 _Mode = enMode.Update;
+        }
+        private void _UpdatePersonMode()
+        {
+            lbMode.Text = "Update Person";
+            lbPersonID2.Text = _Person.PersonID.ToString();
+            tbFirstName.Text = _Person.FirstName;
+            tbSecondName.Text = _Person.SecondName;
+            tbThirdName.Text = _Person.ThirdName;
+            tbLastName.Text = _Person.LastName;
+            tbNationalNumber.Text = _Person.NationalNo;
+            dtpDateOfBirth.Value = _Person.DateOfBirth;
+            if (_Person.GenderByte == 0)
+                rbMale.Checked = true;
+            else
+                rbFemale.Checked = true;
+            tbPhone.Text = _Person.Phone;
+            tbEmail.Text = _Person.Email;
+            cbCountry.SelectedIndex = cbCountry.FindString(clsCountriesBusinessLayer.FindCountryByID(_Person.NationalityCountryID).CountryName);
+
+            if (_Person.ImagePath != null)
+            {
+                pbPersonImage.ImageLocation = _Person.ImagePath;
+            }
+            tbAddress.Text = _Person.Address;
+        }
+        private void _SetPersonData()
+        {
+            _Person.FirstName = tbFirstName.Text;
+            _Person.SecondName = tbSecondName.Text;
+            _Person.ThirdName = tbThirdName.Text;
+            _Person.LastName = tbLastName.Text;
+            _Person.GenderByte = (short)((rbMale.Checked == true) ? 0 : 1);
+            _Person.NationalityCountryID = clsCountriesBusinessLayer.FindCountryByName(cbCountry.Text).CountryID;
+            _Person.Phone = tbPhone.Text;
+            _Person.Email = tbEmail.Text;
+            _Person.Address = tbAddress.Text;
+            _Person.NationalNo = tbNationalNumber.Text;
+            _Person.DateOfBirth = dtpDateOfBirth.Value;
+
+            if (pbPersonImage.ImageLocation != null)
+                _Person.ImagePath = pbPersonImage.ImageLocation;
+            else
+                _Person.ImagePath = null;
         }
         private void _FillCountriesInComoboBox()
         {
@@ -55,28 +99,7 @@ namespace DVLD_Ep1
             }
             _Person = clsPerson.FindByID(_PersonID);
 
-            lbMode.Text = "Update Person";
-            tbFirstName.Text = _Person.FirstName;
-            tbSecondName.Text = _Person.SecondName;
-            tbThirdName.Text = _Person.ThirdName;
-            tbLastName.Text = _Person.LastName;
-            tbNationalNumber.Text = _Person.NationalNo;
-            dtpDateOfBirth.Value = _Person.DateOfBirth;
-            if (_Person.GenderByte == 0)
-                rbMale.Checked = true;
-            else
-                rbFemale.Checked = true;
-            tbPhone.Text = _Person.Phone;
-            tbEmail.Text = _Person.Email;
-            cbCountry.SelectedIndex = cbCountry.FindString(clsCountriesBusinessLayer.FindCountryByID(_Person.NationalityCountryID).CountryName);
-
-            if (_Person.ImagePath!=null)
-            {
-                pbPersonImage.ImageLocation = _Person.ImagePath;
-            }
-
-
-            tbAddress.Text = _Person.Address;
+            _UpdatePersonMode();
         }
         private bool _HandlePersonImage()
         {
@@ -118,16 +141,9 @@ namespace DVLD_Ep1
             LoadData();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void tbNationalNumber_TextChanged(object sender, EventArgs e)
-        {
-          
-        }
-
+       
         private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -141,22 +157,7 @@ namespace DVLD_Ep1
             {
                 return;
             }
-            _Person.FirstName = tbFirstName.Text;
-            _Person.SecondName = tbSecondName.Text;
-            _Person.ThirdName = tbThirdName.Text;
-            _Person.LastName = tbLastName.Text;
-            _Person.GenderByte = (short)((rbMale.Checked == true) ? 0 : 1);
-            _Person.NationalityCountryID = clsCountriesBusinessLayer.FindCountryByName(cbCountry.Text).CountryID;
-            _Person.Phone = tbPhone.Text;
-            _Person.Email = tbEmail.Text;
-            _Person.Address = tbAddress.Text;
-            _Person.NationalNo = tbNationalNumber.Text;
-            _Person.DateOfBirth = dtpDateOfBirth.Value;
-
-            if (pbPersonImage.ImageLocation != null)
-                _Person.ImagePath = pbPersonImage.ImageLocation;
-            else
-                _Person.ImagePath = null;
+            _SetPersonData();
             //Without else, the old image path would stay, which is incorrect.
 
 
@@ -176,7 +177,7 @@ namespace DVLD_Ep1
 
         private void tbNationalNumber_Validating(object sender, CancelEventArgs e)
         {
-            if (clsPerson.Find(null, tbNationalNumber.Text) != null)
+            if (clsPerson.PersonExistByNationalNo(tbNationalNumber.Text) != false)
             {
                 e.Cancel = true;
                 tbNationalNumber.Focus();
@@ -207,34 +208,26 @@ namespace DVLD_Ep1
 
         private void tbEmail_Validating(object sender, CancelEventArgs e)
         {
-            if (tbEmail.Text.Contains("@gmail.com")||tbEmail.Text==null)
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(tbEmail, "");
-            }
-            else
+            string email = tbEmail.Text.Trim();
+            if (string.IsNullOrWhiteSpace(email))
             {
                 e.Cancel = true;
                 tbEmail.Focus();
-                errorProvider1.SetError(tbEmail, "Invalid Address Format !");
+                errorProvider1.SetError(tbEmail, "Address is Required!");
+                return;
             }
-        }
-
-        private void llOpenFileDialog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            openFileDialog1.FilterIndex = 1;
-            openFileDialog1.RestoreDirectory = true;
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (!email.EndsWith("@gmail.com", StringComparison.OrdinalIgnoreCase))
             {
-                // Process the selected file
-                string selectedFilePath = openFileDialog1.FileName;
-                 pbPersonImage.Load(selectedFilePath);
-               // llRemoveImage.Visible = true;
-                // ...
+                e.Cancel = true;
+                tbEmail.Focus();
+                errorProvider1.SetError(tbEmail, "Invalid Address Format!");
+                return;
             }
+            e.Cancel = false;
+            errorProvider1.SetError(tbEmail, "");
         }
+
+    
 
         private void llOpenFileDialog_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -263,6 +256,11 @@ namespace DVLD_Ep1
         }
 
         private void tbAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbMode_Click(object sender, EventArgs e)
         {
 
         }

@@ -1,4 +1,5 @@
 ﻿using ApplicationDataAccessLayer;
+using ApplicationTyoesBusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,14 @@ namespace ApplicationsBusinessLayer
         public enum enMode { AddNew = 0, Update = 1 }
         public enMode Mode = enMode.AddNew;
 
-       
+        public ClsApplicationTypes ApplicationTypeInfo;//important
         public int ApplicationID { get; set; }
         public int ApplicantPersonID { get; set; }
         public DateTime ApplicationDate { get; set; }
         public int ApplicationTypeID { get; set; }
         public enum enApplicationStatus { New = 1, Cancelled = 2, Completed = 3 };
+
+       
         public DateTime LastStatusDate { get; set; }
         public decimal PaidFees { get; set; }
         public int CreatedByUserID { get; set; }
@@ -37,7 +40,7 @@ namespace ApplicationsBusinessLayer
             Mode = enMode.AddNew;
         }
 
-        private ClsApplication(int applicationID, int applicantPersonID, DateTime applicationDate,
+        protected ClsApplication(int applicationID, int applicantPersonID, DateTime applicationDate,
                           int applicationTypeID, enApplicationStatus applicationStatus, DateTime lastStatusDate,
                           decimal paidFees, int createdByUserID)
         {
@@ -45,6 +48,7 @@ namespace ApplicationsBusinessLayer
             this.ApplicantPersonID = applicantPersonID;
             this.ApplicationDate = applicationDate;
             this.ApplicationTypeID = applicationTypeID;
+            this.ApplicationTypeInfo = ClsApplicationTypes.Find(applicationTypeID);//important
             this.ApplicationStatus = applicationStatus;
             this.LastStatusDate = lastStatusDate;
             this.PaidFees = paidFees;
@@ -52,6 +56,7 @@ namespace ApplicationsBusinessLayer
 
             Mode = enMode.Update;
         }
+
         private bool _AddNewApplication()
         {
             this.ApplicationID = ClsApplicationDataAccess.AddNewApplication(ApplicantPersonID, ApplicationDate,ApplicationTypeID,
@@ -110,6 +115,15 @@ lastStatusDate, paidFees, createdByUserID);
         public static bool DeleteApplication(int applicationID)
         {
             return ClsApplicationDataAccess.DeleteApplication(applicationID);
+        }
+        public static bool CancelApplication(int applicationID)
+        {
+            return ClsApplicationDataAccess.CancelApplication(applicationID);
+        }
+
+        public static bool MakeApplicationComplete(int applicationID)
+        {
+            return ClsApplicationDataAccess.MakeApplicationComplete(applicationID);
         }
 
         public static bool IsApplicationExist(int applicationID)

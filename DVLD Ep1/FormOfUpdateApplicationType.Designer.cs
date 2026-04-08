@@ -173,7 +173,9 @@
             this.Controls.Add(this.lbFees);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormOfUpdateApplicationType";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormOfUpdateApplicationType";
             this.Load += new System.EventHandler(this.FormOfUpdateApplicationType_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -368,7 +368,6 @@
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(147, 28);
             this.dtpDateOfBirth.TabIndex = 58;
-            this.dtpDateOfBirth.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label1
             // 
@@ -387,7 +386,6 @@
             this.tbNationalNumber.Name = "tbNationalNumber";
             this.tbNationalNumber.Size = new System.Drawing.Size(147, 27);
             this.tbNationalNumber.TabIndex = 56;
-            this.tbNationalNumber.TextChanged += new System.EventHandler(this.tbNationalNumber_TextChanged);
             this.tbNationalNumber.Validating += new System.ComponentModel.CancelEventHandler(this.tbNationalNumber_Validating);
             // 
             // pictureBox2
@@ -507,6 +505,7 @@
             this.lbMode.Size = new System.Drawing.Size(209, 29);
             this.lbMode.TabIndex = 1;
             this.lbMode.Text = "Add New Person";
+            this.lbMode.Click += new System.EventHandler(this.lbMode_Click);
             // 
             // lbPersonID
             // 
@@ -556,6 +555,7 @@
             this.Controls.Add(this.lbMode);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormOfAddEditNewPerson";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormOfAddEditNewPerson";
             this.Load += new System.EventHandler(this.FormOfAddEditNewPerson_Load);
             this.groupBox1.ResumeLayout(false);

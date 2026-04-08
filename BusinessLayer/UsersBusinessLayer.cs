@@ -214,10 +214,7 @@ namespace UsersBusinessLayer
             return dt;
         }
 
-        public static int TotalUsersNumber()
-        {
-            return clsUsersDataAccess.CountUsers();
-        }
+       
 
         public static bool DeleteUser(int UserID)
         {
